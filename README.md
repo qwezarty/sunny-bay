@@ -2,6 +2,8 @@
 
 *A commertial project which is used to reserve hotels. Built with angular v4.*
 
+[![切换语言](https://img.shields.io/badge/README-%20中文-yellow.svg)](README_zh.md)
+
 ## Features
 
 - Modern UI based on material design.
