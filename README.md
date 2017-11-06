@@ -36,6 +36,8 @@ ng build --prod --aot
 
 - We're glad you can distribute, modify and improve this project.
 
-- Please contact us before commertial usage because we may help you to improve.
+- Please contact us before commertial usage because we may help you to avoid bugs.
 
 - We also appreciate it if you can find some errors in the code and help us to do more!
+
+- Keep going with us! We're glad to help!
