@@ -2,7 +2,7 @@
 
 *这是一个民宿预定项目. 使用Angular v4构建.*
 
-[![Change Language](https://img.shields.io/badge/README-%20English-yellow.svg)](README_zh.md)
+[![Change Language](https://img.shields.io/badge/README-%20English-yellow.svg)](README.md)
 
 ## 应用特性
 
