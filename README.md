@@ -3,6 +3,7 @@
 *A commertial project which is used to reserve hotels. Built with angular v4.*
 
 [![Build Status](https://travis-ci.org/qwezarty/sunny-bay.svg?branch=master)](https://travis-ci.org/qwezarty/sunny-bay)
+[![Dependencies Status](https://david-dm.org/qwezarty/sunny-bay/status.svg)](https://david-dm.org/qwezarty/sunny-bay)
 [![切换中文](https://img.shields.io/badge/README-%20切换中文-yellow.svg)](README_zh.md)
 
 ## Features

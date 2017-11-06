@@ -3,6 +3,7 @@
 *这是一个民宿预定项目. 使用Angular v4构建.*
 
 [![Build Status](https://travis-ci.org/qwezarty/sunny-bay.svg?branch=master)](https://travis-ci.org/qwezarty/sunny-bay)
+[![Dependencies Status](https://david-dm.org/qwezarty/sunny-bay/status.svg)](https://david-dm.org/qwezarty/sunny-bay)
 [![Change Language](https://img.shields.io/badge/README-%20English-yellow.svg)](README.md)
 
 ## 应用特性
