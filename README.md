@@ -36,6 +36,20 @@ To product this web-app, simply to type this:
 ng build --prod
 ```
 
+## Project status
+
+Sunny Bay hasn't got to demo right now. We'll keep our effort to get into alpha. Before stepping into alpha, things could be changed drastically, i.e. structures, layouts, routers, styles, animations and so on.
+
+| Task                      | Status                           |
+|:--------------------------|:--------------------------------:|
+| layout and router         |       in-progress, finish 20 Nov |
+| rentals and rooms page    |      not started, planned 30 Nov |
+| other pages               |      not started, planned 10 Dec |
+| style and animation       |      not started, planned 20 Dec |
+| database and cdn service  |         not started, not planned |
+| data binding              |         not started, not planned |
+| backend design and coding |         not started, not planned |
+
 ## About licence
 
 - Liscence of Sunny-Bay is based on GNU V3.
