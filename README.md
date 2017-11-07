@@ -14,7 +14,9 @@
 
 ## How to run the code
 
-To clone and run the repository, you'll need Git and Node.js(integrate with npm) installed on your computer. You can run the command line below on Mac/Linux:
+To clone and run the repository, Git and Node.js(integrate with npm) should be installed.
+
+You can run the command line below on Mac/Linux:
 
 ``` bash
 # clone this repository
@@ -31,14 +33,14 @@ To product this web-app, simply to type this:
 
 ``` bash
 # find the product code below 'dist' folder
-ng build --prod --aot
+ng build --prod
 ```
 
 ## About licence
 
-- Sunny-Bay is based on GNU V3.
+- Liscence of Sunny-Bay is based on GNU V3.
 
-- We're glad you can distribute, modify and improve this project.
+- We're glad to see you distribute, modify and improve this project.
 
 - Please contact us before commertial usage because we may help you to avoid bugs.
 

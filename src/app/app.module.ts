@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 // todo need to remove later
 import { MatButtonModule } from '@angular/material';
+import { RentalsModule } from './rentals/rentals.module';
 
 import { AppComponent } from './app.component';
 
@@ -14,7 +15,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    RentalsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

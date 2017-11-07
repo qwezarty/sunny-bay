@@ -14,7 +14,9 @@
 
 ## 如何运行代码
 
-在下载和运行这个项目之前，你需要安装Git和Node.js。在Mac/Linux上你可以在终端中运行以下命令行：
+在下载和运行这个项目之前，你需要安装Git和Node.js。
+
+在Mac/Linux上你可以在终端中运行以下命令行：
 
 ``` bash
 # 克隆这个仓库
@@ -31,7 +33,7 @@ ng serve
 
 ``` bash
 # 编译完成之后的文件存在于'dist'文件夹下
-ng build --prod --aot
+ng build --prod
 ```
 
 ## 关于许可证
