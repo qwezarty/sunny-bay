@@ -25,6 +25,8 @@ git clone https://github.com/qwezarty/sunny-bay.git
 cd sunny-bay
 # 安装依赖（Linux可能需要加入'sudo'前缀）
 npm install
+# 同样需要安装angular命令行工具
+npm install -g @angular/cli
 # 运行程序（你可以访问：http://localhost:4200）
 ng serve
 ```

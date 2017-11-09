@@ -25,6 +25,8 @@ git clone https://github.com/qwezarty/sunny-bay.git
 cd sunny-bay
 # install dependencies(or using 'sudo' prefix if permission denied)
 npm install
+# we also need angular-cli to serve the app
+npm install -g @angular/cli
 # run the app(default port is 4200, you can visit http://localhost:4200)
 ng serve
 ```
