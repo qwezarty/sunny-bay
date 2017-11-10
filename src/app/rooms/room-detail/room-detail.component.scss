@@ -1,0 +1,23 @@
+section {
+    margin: 0;
+    padding: 40px;
+    dt {
+        font-weight: bold;
+        line-height: 2em;
+    }
+    dd {
+        margin: 0;
+    }
+}
+.room-general {
+    background: cyan;
+}
+.room-detail-1 {
+    background: burlywood;
+}
+.room-detail-2 {
+    background: coral;
+}
+.room-detail-3 {
+    background: orchid;
+}

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RoomsRoutingModule } from './rooms-routing.module';
 import { MatGridListModule } from '@angular/material';
+import { MatTabsModule } from '@angular/material';
 
 import { RoomListComponent } from './room-list/room-list.component';
 import { RoomDetailComponent } from './room-detail/room-detail.component';
@@ -10,7 +11,8 @@ import { RoomDetailComponent } from './room-detail/room-detail.component';
   imports: [
     CommonModule,
     RoomsRoutingModule,
-    MatGridListModule
+    MatGridListModule,
+    MatTabsModule
   ],
   declarations: [RoomListComponent, RoomDetailComponent]
 })

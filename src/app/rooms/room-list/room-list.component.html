@@ -3,8 +3,9 @@
   *ngFor="let tile of gridTiles"
   [colspan]="tile.cols"
   [rowspan]="tile.rows"
-  [style.background]="tile.color">
-    {{tile.text}}
+  [style.background]="tile.color"
+  routerLink="2">
+  {{tile.text}}
     <!-- <mat-grid-tile-footer>
     </mat-grid-tile-footer> -->
   </mat-grid-tile>
