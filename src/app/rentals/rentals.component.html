@@ -1,7 +1,8 @@
 <div class="rental-container" fxLayout="column" fxLayoutAlign="space-around">
   <section class="rental-logo" fxFlexOrder="1">
     <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around center">
-      <img fxFlex="50" fxFlex.xs="90" src="http://images.ioliu.cn/bing/SecretaryHunt_PT-BR11569265072_640x480.jpg" alt="">
+      <!-- <img fxFlex="50" fxFlex.xs="90" src="http://images.ioliu.cn/bing/SecretaryHunt_PT-BR11569265072_640x480.jpg" alt=""> -->
+      <img fxFlex="50" fxFlex.xs="90" src="http://images.ioliu.cn/bing/SecretaryHunt_PT-BR11569265072_1920x1080.jpg" alt="">
       <dl fxFlex="40">
         <dt>Sunny Bay</dt>
         <dd>
@@ -19,10 +20,14 @@
             <img src="http://images.ioliu.cn/bing/LeuchtturmWarnemuende_EN-AU8137822331_640x480.jpg" alt="">
           </div>
           <div class="swiper-slide">
-            <img src="http://images.ioliu.cn/bing/FoucaultPendulum_EN-AU9807228543_640x480.jpg" alt="">
+            <img class="swiper-lazy" src="http://images.ioliu.cn/bing/FoucaultPendulum_EN-AU9807228543_640x480.jpg" alt="">
+            <!-- <img class="swiper-lazy" data-src="http://images.ioliu.cn/bing/FoucaultPendulum_EN-AU9807228543_1920x1080.jpg" alt=""> -->
+            <div class="swiper-lazy-preloader"></div>
           </div>
           <div class="swiper-slide">
-            <img src="http://images.ioliu.cn/bing/ShanwangpingKarst_EN-AU5360258756_640x480.jpg" alt="">
+            <img class="swiper-lazy" src="http://images.ioliu.cn/bing/ShanwangpingKarst_EN-AU5360258756_640x480.jpg" alt="">
+            <!-- <img class="swiper-lazy" data-src="http://images.ioliu.cn/bing/ShanwangpingKarst_EN-AU5360258756_1920x1080.jpg" alt=""> -->
+            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
           </div>
         </div>
         <!-- Add Pagination -->

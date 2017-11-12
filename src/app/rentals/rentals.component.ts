@@ -14,6 +14,9 @@ export class RentalsComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     const swiper = new Swiper('.swiper-container', {
+      lazy: {
+        loadPrevNext: true
+      },
       grabCursor: true,
       pagination: {
         el: '.swiper-pagination',
