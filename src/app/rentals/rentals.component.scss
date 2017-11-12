@@ -11,6 +11,12 @@ section {
 }
 .rental-logo {
     background: cyan;
+    .rental-logo-container {
+        border: 1px solid red;
+        img {
+            max-width: 50%;
+        }
+    }
 }
 .rental-general {
     background: burlywood;
