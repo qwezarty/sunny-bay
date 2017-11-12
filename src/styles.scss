@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-@import "~swiper/dist/css/swiper.min.css";
+@import "~swiper/dist/css/swiper.css";
 
 img {
     max-width: 100%;
@@ -11,8 +11,12 @@ img {
     width: 100%;
     height: 100%;
     margin: 0;
-  }
-  .swiper-slide {
+}
+.swiper-wrapper {
+    align-items: center;
+    -webkit-align-items: center;
+}
+.swiper-slide {
     text-align: center;
     font-size: 18px;
     background: #fff;
@@ -29,4 +33,4 @@ img {
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
- }
+}
