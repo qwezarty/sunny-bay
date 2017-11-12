@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-rentals',
   templateUrl: './rentals.component.html',
   styleUrls: ['./rentals.component.scss']
 })
-export class RentalsComponent implements OnInit {
+export class RentalsComponent implements OnInit, AfterViewInit {
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ngAfterViewInit(): void {
+    const swiper = new Swiper('.swiper-container', {
+      // grabCursor: true,
+      allowTouchMove: true,
+      pagination: {
+        el: '.swiper-pagination',
+        dynamicBullets: true
+      }
+    });
   }
 
 }

@@ -1,7 +1,7 @@
 <div class="rental-container" fxLayout="column" fxLayoutAlign="space-around">
-  <section fxFlexOrder="1" class="rental-logo">
-    <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around center">
-      <img fxFlex="50" fxFlex.xs="90" src="http://images.ioliu.cn/bing/SecretaryHunt_PT-BR11569265072_1366x768.jpg" alt="">
+  <section class="rental-logo" fxFlexOrder="1">
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around center">
+      <img fxFlex="50" fxFlex.xs="90" src="http://images.ioliu.cn/bing/SecretaryHunt_PT-BR11569265072_640x480.jpg" alt="">
       <dl fxFlex="40">
         <dt>Sunny Bay</dt>
         <dd>
@@ -11,12 +11,29 @@
     </div>
   </section>
   <section fxFlexOrder="2" class="rental-general">
-    <dl>
-      <dt>General Page</dt>
-      <dd>
-        There should be description of rental.
-      </dd>
-    </dl>
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around center">
+      <div class="swiper-container" fxFlex="50" fxFlex.xs="90">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="http://images.ioliu.cn/bing/LeuchtturmWarnemuende_EN-AU8137822331_640x480.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="http://images.ioliu.cn/bing/FoucaultPendulum_EN-AU9807228543_640x480.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="http://images.ioliu.cn/bing/ShanwangpingKarst_EN-AU5360258756_640x480.jpg" alt="">
+          </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+      <dl fxFlex="40">
+        <dt>General Page</dt>
+        <dd>
+          There should be description of rental.
+        </dd>
+      </dl>
+    </div>
   </section>
   <section fxFlexOrder="3" class="rental-show">
     <dl>
