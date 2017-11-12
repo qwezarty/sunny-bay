@@ -14,8 +14,7 @@ export class RentalsComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     const swiper = new Swiper('.swiper-container', {
-      // grabCursor: true,
-      allowTouchMove: true,
+      grabCursor: true,
       pagination: {
         el: '.swiper-pagination',
         dynamicBullets: true
