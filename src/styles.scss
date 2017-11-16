@@ -23,11 +23,14 @@ html {
 // typography colors & contrast
 $font-color-dense: rgba(0,0,0,0.87);
 $font-color-light: rgba(0,0,0,0.54);
-html {
+body {
     color: $font-color-dense;
 }
 
 // other groceries
+body {
+    margin: 0;
+}
 img {
     max-width: 100%;
 }
