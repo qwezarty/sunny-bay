@@ -37,12 +37,13 @@ body {
         right: 56px;
     }
 }
-// mat-sidenav {
-//     width: 256px;
-//     @media only screen and (max-width: 600px) {
-//         width: 224px;
-//     }
-// }
+
+// component node stylesheet
+app-room-list {
+    display: flex;
+    flex-flow: column;
+    flex: 1 1 100%;
+}
 
 // other groceries
 body {

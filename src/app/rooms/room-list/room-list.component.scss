@@ -1,3 +1,7 @@
-mat-sidenav {
-    width: 256px;
+mat-sidenav-container {
+    flex: 1 1 100%;
+    mat-sidenav {
+        width: 256px;
+        height: 100%;
+    }
 }
