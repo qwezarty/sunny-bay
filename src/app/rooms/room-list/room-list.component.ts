@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-room-list',
   templateUrl: './room-list.component.html',
-  styleUrls: ['./room-list.component.scss'],
+  styleUrls: ['./room-list.component.scss']
 })
 export class RoomListComponent implements OnInit {
-  sidenav: { 'mode': string, 'opened': string } = {'mode': 'side', 'opened': 'true'};
+  footerEleRef: ElementRef;
+  mainEleRef: ElementRef;
+  sidenav: { 'mode': string, 'opened': string } = { 'mode': 'side', 'opened': 'true' };
   gridTiles = [
     { text: 'One', cols: 3, rows: 1, color: 'lightblue' },
     { text: 'Two', cols: 1, rows: 2, color: 'lightgreen' },
@@ -20,10 +22,16 @@ export class RoomListComponent implements OnInit {
     { text: 'Eight', cols: 2, rows: 1, color: 'lightseagreen' },
   ];
 
-  constructor(private breakpointService: BreakpointObserver) {
+  constructor(
+    private breakpointService: BreakpointObserver,
+    private renderer: Renderer2,
+    private eleRef: ElementRef) {
   }
 
   ngOnInit() {
+    const childrenElements = this.eleRef.nativeElement.parentElement.children;
+    this.footerEleRef = childrenElements[childrenElements.length - 1];
+    this.mainEleRef = this.eleRef.nativeElement.parentElement;
     this.observeDevice();
   }
 
@@ -47,11 +55,27 @@ export class RoomListComponent implements OnInit {
   activateSmallLayout() {
     this.sidenav.mode = 'push';
     this.sidenav.opened = 'false';
+    this.renderer.removeAttribute(
+      this.footerEleRef,
+      'hidden'
+    );
+    this.renderer.removeStyle(
+      this.mainEleRef,
+      'display'
+    );
   }
 
   activateLargeLayout() {
     this.sidenav.mode = 'side';
     this.sidenav.opened = 'true';
+    this.renderer.setAttribute(
+      this.footerEleRef,
+      'hidden', ''
+    );
+    this.renderer.setStyle(
+      this.mainEleRef,
+      'display', 'flex'
+    );
   }
 
 }
