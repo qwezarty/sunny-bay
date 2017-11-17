@@ -1,6 +1,6 @@
 # Sunny-Bay
 
-*这是一个民宿预定项目. 使用Angular v4构建.*
+*这是一个民宿预定项目. 使用Angular v5构建.*
 
 [![Build Status](https://travis-ci.org/qwezarty/sunny-bay.svg?branch=master)](https://travis-ci.org/qwezarty/sunny-bay)
 [![Dependencies Status](https://david-dm.org/qwezarty/sunny-bay/status.svg)](https://david-dm.org/qwezarty/sunny-bay)
@@ -44,10 +44,10 @@ Sunny Bay 现在还没有进入demo阶段。我们会努力尽快地进入到alp
 
 | 任务                       | 状态                              |
 |:--------------------------|:--------------------------------:|
-| 布局和路由                  |         正在进行中，计划11月20日完成 |
-| 民宿和房间页                |           没有开始，计划11月30日完成 |
-| 其他所有页面                |           没有开始，计划12月10日完成 |
-| 样式和动画                  |           没有开始，计划12月20日完成 |
+| 布局和路由                  |         正在进行中，计划11月25日完成 |
+| 民宿和房间页                |           没有开始，计划12月05日完成 |
+| 其他所有页面                |           没有开始，计划12月15日完成 |
+| 样式和动画                  |           没有开始，计划12月25日完成 |
 | 数据库和CDN加速             |                   没有开始，没有计划 |
 | 数据绑定                    |                  没有开始，没有计划 |
 | 后端设计和编码               |                  没有开始，没有计划 |

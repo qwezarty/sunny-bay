@@ -1,6 +1,6 @@
 # Sunny-Bay
 
-*A commertial project which is used to reserve hotels. Built with angular v4.*
+*A commertial project which is used to reserve hotels. Built with angular v5.*
 
 [![Build Status](https://travis-ci.org/qwezarty/sunny-bay.svg?branch=master)](https://travis-ci.org/qwezarty/sunny-bay)
 [![Dependencies Status](https://david-dm.org/qwezarty/sunny-bay/status.svg)](https://david-dm.org/qwezarty/sunny-bay)
@@ -44,10 +44,10 @@ Sunny Bay hasn't got to demo right now. We'll keep our effort to get into alpha.
 
 | Task                      | Status                           |
 |:--------------------------|:--------------------------------:|
-| layout and router         |       in-progress, finish 20 Nov |
-| rentals and rooms page    |      not started, planned 30 Nov |
-| other pages               |      not started, planned 10 Dec |
-| style and animation       |      not started, planned 20 Dec |
+| layout and router         |       in-progress, finish 25 Nov |
+| rentals and rooms page    |      not started, planned 05 Dec |
+| other pages               |      not started, planned 15 Dec |
+| style and animation       |      not started, planned 25 Dec |
 | database and cdn service  |         not started, not planned |
 | data binding              |         not started, not planned |
 | backend design and coding |         not started, not planned |
