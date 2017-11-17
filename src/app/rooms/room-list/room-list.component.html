@@ -1,12 +1,26 @@
-<mat-grid-list cols="4" rowHeight="4:3">
-  <mat-grid-tile
-  *ngFor="let tile of gridTiles"
-  [colspan]="tile.cols"
-  [rowspan]="tile.rows"
-  [style.background]="tile.color"
-  routerLink="2">
-  {{tile.text}}
-    <!-- <mat-grid-tile-footer>
-    </mat-grid-tile-footer> -->
-  </mat-grid-tile>
-</mat-grid-list>
+<mat-sidenav-container>
+  <mat-sidenav 
+      #sidenavElement
+      class="mat-elevation-z16"
+      [mode]="sidenav.mode"
+      [opened]="sidenav.opened"
+      >
+  </mat-sidenav>
+  <mat-grid-list cols="4" rowHeight="1:1">
+    <mat-grid-tile 
+      *ngFor="let tile of gridTiles"
+      [colspan]="tile.cols"
+      [rowspan]="tile.rows"
+      [style.background]="tile.color"
+      routerLink="2">
+      {{tile.text}}
+      <!-- <mat-grid-tile-footer>
+      </mat-grid-tile-footer> -->
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-sidenav-container>
+<div class="fab-wrapper">
+  <button mat-fab (click)="sidenavElement.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+</div>

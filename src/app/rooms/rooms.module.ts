@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { LayoutModule } from '@angular/cdk/layout';
 import { RoomsRoutingModule } from './rooms-routing.module';
+import { MatIconModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material';
 import { MatGridListModule } from '@angular/material';
 import { MatTabsModule } from '@angular/material';
+import { MatSidenavModule } from '@angular/material';
 
 import { RoomListComponent } from './room-list/room-list.component';
 import { RoomDetailComponent } from './room-detail/room-detail.component';
@@ -12,9 +16,13 @@ import { RoomDetailComponent } from './room-detail/room-detail.component';
   imports: [
     CommonModule,
     FlexLayoutModule,
+    LayoutModule,
     RoomsRoutingModule,
+    MatIconModule,
+    MatButtonModule,
     MatGridListModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSidenavModule,
   ],
   declarations: [RoomListComponent, RoomDetailComponent]
 })
