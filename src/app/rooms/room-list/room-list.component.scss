@@ -1,11 +1,23 @@
+@import '~@angular/material/theming';
+
 mat-sidenav-container {
     flex: 1 1 100%;
     mat-sidenav {
         width: 256px;
         height: 100%;
     }
+    mat-sidenav-content {
+        padding: 24px;
+    }
 }
-
+mat-card {
+    margin: 8px;
+    @include mat-elevation-transition;
+    @include mat-elevation(2);
+    &:hover {
+        @include mat-elevation(8);
+    }
+}
 .main-card {
     max-width: 400px;
 }
