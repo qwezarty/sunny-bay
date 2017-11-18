@@ -1,20 +1,28 @@
 <div class="rental-container" fxLayout="column" fxLayoutAlign="space-around">
-  <section class="rental-logo" fxFlexOrder="1">
-    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around center">
-      <!-- <img fxFlex="50" fxFlex.xs="90" src="http://images.ioliu.cn/bing/SecretaryHunt_PT-BR11569265072_640x480.jpg" alt=""> -->
-      <img fxFlex="50" fxFlex.xs="90" src="http://images.ioliu.cn/bing/SecretaryHunt_PT-BR11569265072_1920x1080.jpg" alt="">
-      <dl fxFlex="40">
+  <section class="rental-logo" 
+           fxFlexOrder="1"
+           fxLayout="row"
+           fxLayout.xs="column"
+           fxLayoutAlign="space-around center">
+    <!-- <img fxFlex="50" fxFlex.xs="90" src="http://images.ioliu.cn/bing/SecretaryHunt_PT-BR11569265072_640x480.jpg" alt=""> -->
+    <div fxFlex="60%">
+      <img src="http://images.ioliu.cn/bing/SecretaryHunt_PT-BR11569265072_1920x1080.jpg" alt="">
+    </div>
+    <div fxFlex="35%">
+      <dl>
         <dt>日光海岸</dt>
-        <dd>
-          提供优秀的民宿预定服务，使用Angular5构建。
-        </dd>
+        <dd>提供优秀的民宿预定服务，使用Angular5构建。</dd>
       </dl>
     </div>
   </section>
-  <section fxFlexOrder="2" class="rental-general">
-    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-around center">
+  <section class="rental-general"
+           fxFlexOrder="2"
+           fxLayout="row"
+           fxLayout.xs="column"
+           fxLayoutAlign="space-around center">
       <!-- Carousel -->
-      <div class="swiper-container" fxFlex="50" fxFlex.xs="90">
+    <div fxFlex="60%">
+      <div class="swiper-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <img src="http://images.ioliu.cn/bing/LeuchtturmWarnemuende_EN-AU8137822331_640x480.jpg" alt="">
@@ -25,23 +33,24 @@
             <div class="swiper-lazy-preloader"></div>
           </div>
           <div class="swiper-slide">
-            <!-- <img class="swiper-lazy" src="http://images.ioliu.cn/bing/ShanwangpingKarst_EN-AU5360258756_640x480.jpg" alt=""> -->
-            <img class="swiper-lazy" data-src="http://images.ioliu.cn/bing/ShanwangpingKarst_EN-AU5360258756_1920x1080.jpg" alt="">
+            <img class="swiper-lazy" src="http://images.ioliu.cn/bing/ShanwangpingKarst_EN-AU5360258756_640x480.jpg" alt="">
+            <!-- <img class="swiper-lazy" data-src="http://images.ioliu.cn/bing/ShanwangpingKarst_EN-AU5360258756_1920x1080.jpg" alt=""> -->
             <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
           </div>
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
-      </div>
-      <dl fxFlex="40">
+    </div>
+    </div>
+    <div fxFlex="35%">
+      <dl>
         <dt>General Page</dt>
-        <dd>
-          There should be description of rental.
-        </dd>
+        <dd>There should be description of rental.</dd>
       </dl>
     </div>
   </section>
-  <section fxFlexOrder="3" class="rental-show">
+  <section class="rental-show"
+           fxFlexOrder="3">
     <dl>
       <dt>Show Room</dt>
       <dd>
@@ -50,7 +59,8 @@
       </dd>
     </dl>
   </section>
-  <section fxFlexOrder="4" class="rental-around">
+  <section class="rental-around"
+           fxFlexOrder="4">
     <dl>
       <dt>Discovery</dt>
       <dd>
