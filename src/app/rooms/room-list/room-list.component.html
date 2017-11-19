@@ -3,7 +3,22 @@
       #sidenavElement
       class="mat-elevation-z16"
       [mode]="sidenav.mode"
-      [opened]="sidenav.opened">
+      [opened]="sidenav.opened"
+      fxLayout="column">
+      <mat-card fxFlex="100%" fxLayout="column" fxLayoutAlign="space-between space-between">
+        <mat-card-title-group>
+          <!-- <div mat-card-avatar class="sidenav-avatar"></div> -->
+          <img mat-card-md-image src="http://images.ioliu.cn/bing/LeuchtturmWarnemuende_EN-AU8137822331_640x480.jpg" alt="">
+          <!-- <img mat-card-avatar src="http://images.ioliu.cn/bing/LeuchtturmWarnemuende_EN-AU8137822331_640x480.jpg" alt=""> -->
+          <mat-card-title>Shiba Inu</mat-card-title>
+          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-content fxFlex="60%">
+        </mat-card-content>
+        <mat-card-footer>
+          footer
+        </mat-card-footer>
+      </mat-card>
   </mat-sidenav>
 
   <mat-sidenav-content

@@ -3,20 +3,29 @@
 
 mat-sidenav-container {
     flex: 1 1 100%;
-    mat-sidenav {
-        width: 4 * $unit-one-increment;
-        height: 100%;
-    }
-    mat-sidenav-content {
-        padding: $unit-screen-margin;
-    }
 }
-mat-card {
-    margin: 0;
-    @include mat-elevation-transition;
-    @include mat-elevation(2);
-    &:hover {
-        @include mat-elevation(8);
+
+mat-sidenav {
+    width: 5 * $unit-one-increment;
+    height: 100%;
+    mat-card {
+        .sidenav-avatar {
+            background-image: url('http://images.ioliu.cn/bing/LeuchtturmWarnemuende_EN-AU8137822331_640x480.jpg');
+            background-size: cover;
+        }
+    }
+
+}
+
+mat-sidenav-content {
+    padding: $unit-screen-margin;
+    mat-card {
+        margin: 0;
+        @include mat-elevation-transition;
+        @include mat-elevation(2);
+        &:hover {
+            @include mat-elevation(8);
+        }
     }
 }
 
