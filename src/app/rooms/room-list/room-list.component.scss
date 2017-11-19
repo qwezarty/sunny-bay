@@ -1,4 +1,5 @@
 @import '~@angular/material/theming';
+@import '~variables.scss';
 
 mat-sidenav-container {
     flex: 1 1 100%;
@@ -7,17 +8,18 @@ mat-sidenav-container {
         height: 100%;
     }
     mat-sidenav-content {
-        padding: 24px;
+        padding: $unit-screen-margin;
     }
 }
 mat-card {
-    margin: 8px;
+    margin: 0;
     @include mat-elevation-transition;
     @include mat-elevation(2);
     &:hover {
         @include mat-elevation(8);
     }
 }
-.main-card {
-    max-width: 400px;
+
+.card-container {
+    padding: $unit-space-between-content-areas;
 }

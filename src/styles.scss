@@ -33,7 +33,7 @@ body {
     position: fixed;
     bottom: 96px;
     right: 64px;
-    @media only screen and (max-width: 600px) {
+    @media screen and (max-width: 600px) {
         right: 56px;
     }
 }
