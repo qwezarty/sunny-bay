@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 // @import url('https://fonts.googleapis.com/earlyaccess/notosanssc.css');
 @import url('https://fonts.googleapis.com/earlyaccess/notosansscsliced.css');
+@import "~variables.scss";
 
 // font-family
 html {
@@ -33,7 +34,7 @@ body {
     position: fixed;
     bottom: 96px;
     right: 64px;
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: $media-mobile-max) {
         right: 56px;
     }
 }

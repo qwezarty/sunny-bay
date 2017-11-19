@@ -4,7 +4,7 @@
 mat-sidenav-container {
     flex: 1 1 100%;
     mat-sidenav {
-        width: 256px;
+        width: 4 * $unit-one-increment;
         height: 100%;
     }
     mat-sidenav-content {
