@@ -8,7 +8,7 @@
 $unit-mobile: 56px;
 $unit-tablet: 64px;
 $unit-desktop: 72px;
-$unit-one-dp: $unit-tablet;
+$unit-one-dp: $unit-tablet / 56;
 $unit-one-increment: 56 * $unit-one-dp;
 $media-mobile-max: 600px;
 $media-tablet-min: 601px;
