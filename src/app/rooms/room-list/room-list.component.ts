@@ -32,7 +32,7 @@ export class RoomListComponent implements OnInit {
       }
     });
     this.breakpointService.observe([
-      '(min-width: 1024px)'
+      '(min-width: 1025px)'
     ]).subscribe(result => {
       if (result.matches) {
         this.activateLargeLayout();
