@@ -14,6 +14,17 @@
           <mat-card-subtitle>Dog Breed</mat-card-subtitle>
         </mat-card-title-group>
         <mat-card-content fxFlex="60%">
+          <mat-list>
+            <mat-list-item *ngFor="let filterOption of filterOptions">
+              <mat-slide-toggle
+                color="accent"
+                [checked]="filterOption.checked"
+                [disabled]="filterOption.disabled"
+                (change)="onToggleChange(filterOption)">
+                {{ filterOption.value }}
+               </mat-slide-toggle>
+            </mat-list-item>
+          </mat-list>
         </mat-card-content>
         <mat-card-footer>
           footer

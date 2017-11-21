@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
+import { NgModel } from '@angular/forms';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Observable } from 'rxjs/Observable';
 
@@ -10,6 +11,13 @@ import { Observable } from 'rxjs/Observable';
 export class RoomListComponent implements OnInit {
   footerEleRef: ElementRef;
   sidenav: { 'mode': string, 'opened': string } = { 'mode': 'side', 'opened': 'true' };
+  filterOptions: { 'value': string, 'checked': boolean, 'disabled': boolean }[] = [
+    { 'value': 'All', 'checked': true, 'disabled': false },
+    { 'value': 'Deluxe Suite', 'checked': true, 'disabled': false },
+    { 'value': 'Single Room', 'checked': true, 'disabled': false },
+    { 'value': 'Standard Room', 'checked': true, 'disabled': false },
+  ];
+  isChecked = false;
 
   constructor(
     private breakpointService: BreakpointObserver,
@@ -59,4 +67,18 @@ export class RoomListComponent implements OnInit {
     );
   }
 
+  onToggleChange(filterOption) {
+    filterOption.checked = !filterOption.checked;
+    console.log(filterOption);
+    console.log(this.filterOptions);
+    if (filterOption.value === 'All') {
+      this.filterOptions.filter((option) => {
+        return option.value !== 'All';
+      }).forEach((option) => {
+        option.checked = filterOption.checked ? true : false;
+      });
+    } else {
+      this.filterOptions[0].checked = false;
+    }
+  }
 }

@@ -9,8 +9,9 @@ import {
         MatTabsModule,
         MatSidenavModule,
         MatCardModule,
+        MatListModule,
+        MatSlideToggleModule,
       } from '@angular/material';
-
 import { RoomListComponent } from './room-list/room-list.component';
 import { RoomDetailComponent } from './room-detail/room-detail.component';
 
@@ -25,6 +26,8 @@ import { RoomDetailComponent } from './room-detail/room-detail.component';
     MatTabsModule,
     MatSidenavModule,
     MatCardModule,
+    MatListModule,
+    MatSlideToggleModule,
   ],
   declarations: [RoomListComponent, RoomDetailComponent]
 })
