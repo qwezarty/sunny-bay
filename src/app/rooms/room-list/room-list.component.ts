@@ -9,7 +9,6 @@ import { Observable } from 'rxjs/Observable';
 })
 export class RoomListComponent implements OnInit {
   footerEleRef: ElementRef;
-  mainEleRef: ElementRef;
   sidenav: { 'mode': string, 'opened': string } = { 'mode': 'side', 'opened': 'true' };
   gridTiles = [
     { text: 'One', cols: 3, rows: 1, color: 'lightblue' },
@@ -31,7 +30,6 @@ export class RoomListComponent implements OnInit {
   ngOnInit() {
     const childrenElements = this.eleRef.nativeElement.parentElement.children;
     this.footerEleRef = childrenElements[childrenElements.length - 1];
-    this.mainEleRef = this.eleRef.nativeElement.parentElement;
     this.observeDevice();
   }
 
@@ -55,26 +53,19 @@ export class RoomListComponent implements OnInit {
   activateSmallLayout() {
     this.sidenav.mode = 'push';
     this.sidenav.opened = 'false';
-    this.renderer.removeAttribute(
-      this.footerEleRef,
-      'hidden'
-    );
-    this.renderer.removeStyle(
-      this.mainEleRef,
-      'display'
-    );
+    this.removeGlobalFooter();
   }
 
   activateLargeLayout() {
     this.sidenav.mode = 'side';
     this.sidenav.opened = 'true';
+    this.removeGlobalFooter();
+  }
+
+  removeGlobalFooter() {
     this.renderer.setAttribute(
       this.footerEleRef,
       'hidden', ''
-    );
-    this.renderer.setStyle(
-      this.mainEleRef,
-      'display', 'flex'
     );
   }
 
