@@ -36,4 +36,7 @@ mat-sidenav-content {
 
 .card-container {
     padding: $unit-space-between-content-areas;
+    &:focus {
+        outline: none;
+    }
 }
