@@ -8,7 +8,7 @@ addons:
     packages:
     - google-chrome-stable
 before_script:
-# - export DISPLAY=:99.0
+- export DISPLAY=:99.0
 - npm install -g @angular/cli
 script:
 - ng build --prod
