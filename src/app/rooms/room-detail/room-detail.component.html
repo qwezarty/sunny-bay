@@ -1,6 +1,15 @@
 <div class="room-detail-container" fxLayout="column" fxLayoutAlign="space-around">
-  <section fxFlexOrder="1" class="room-general">
-    <dl>
+  <section class="room-general"
+           fxLayout="row"
+           fxLayoutAlign="space-between start"
+           fxLayout.xs="column">
+    <video class="mat-elevation-z2"
+           poster="http://cms-origin-cn.battle.net/cms/gallery/EAKKB99UW6HF1509581523047.jpg"
+           src="https://flv2.bn.netease.com/videolib3/1711/04/uwieG3913/HD/uwieG3913-mobile.mp4"
+           preload="metadata"
+           controls="controls"
+           fxFlex="60%"></video>
+    <dl fxFlex="35%">
       <dt>A great room</dt>
       <dd>
         A facinating room only cast $199, what are you waiting for?
@@ -9,7 +18,7 @@
   </section>
   <mat-tab-group>
     <mat-tab label="Show Room">
-      <section fxFlexOrder="2" class="room-detail-1">
+      <section class="room-detail-1">
         <dl>
           <dt>Show Room</dt>
           <dd>
@@ -19,7 +28,7 @@
       </section>
     </mat-tab>
     <mat-tab label="Room Detail">
-      <section fxFlexOrder="3" class="room-detail-2">
+      <section class="room-detail-2">
         <dl>
           <dt>Room Detail</dt>
           <dd>
@@ -29,7 +38,7 @@
       </section>
     </mat-tab>
     <mat-tab label="Discover & Contact">
-      <section fxFlexOrder="4" class="room-detail-3">
+      <section class="room-detail-3">
         <dl>
           <dt>Discovery</dt>
           <dd>
