@@ -25,4 +25,16 @@ export class RentalsComponent implements OnInit, AfterViewInit {
     });
   }
 
+  onSectionDown() {
+    window.scrollBy({
+      behavior: 'smooth',
+      top: window.innerHeight,
+    });
+    // window.scrollTo({
+    //   behavior: 'smooth',
+    //   top: window.innerHeight,
+    // });
+
+  }
+
 }

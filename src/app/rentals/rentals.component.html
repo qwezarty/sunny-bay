@@ -4,50 +4,48 @@
            fxLayout="row"
            fxLayout.xs="column"
            fxLayoutAlign="space-around center">
+    <div class="rental-logo-background" fxFlex="100">
+
     <!-- <img fxFlex="50" fxFlex.xs="90" src="http://images.ioliu.cn/bing/SecretaryHunt_PT-BR11569265072_640x480.jpg" alt=""> -->
-    <div fxFlex="60%">
+    <!-- <div fxFlex="60%">
       <img src="http://images.ioliu.cn/bing/SecretaryHunt_PT-BR11569265072_1920x1080.jpg" alt="">
-    </div>
-    <div fxFlex="35%">
+    </div> -->
+    <!-- <div fxFlex="35%">
       <dl>
         <dt>日光海岸</dt>
         <dd>提供优秀的民宿预定服务，使用Angular5构建。</dd>
       </dl>
+    </div> -->
+
     </div>
   </section>
   <section class="rental-general"
-           fxFlexOrder="2"
-           fxLayout="row"
+           fxFlexOrder="2">
+           <!-- fxLayout="row"
            fxLayout.xs="column"
-           fxLayoutAlign="space-around center">
+           fxLayoutAlign="space-around center"> -->
       <!-- Carousel -->
-    <div fxFlex="60%">
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="http://images.ioliu.cn/bing/LeuchtturmWarnemuende_EN-AU8137822331_640x480.jpg" alt="">
-          </div>
-          <div class="swiper-slide">
-            <!-- <img class="swiper-lazy" data-src="http://images.ioliu.cn/bing/FoucaultPendulum_EN-AU9807228543_1920x1080.jpg" alt=""> -->
-            <img class="swiper-lazy" data-src="http://images.ioliu.cn/bing/FoucaultPendulum_EN-AU9807228543_640x480.jpg" alt="">
-            <div class="swiper-lazy-preloader"></div>
-          </div>
-          <div class="swiper-slide">
-            <!-- <img class="swiper-lazy" data-src="http://images.ioliu.cn/bing/ShanwangpingKarst_EN-AU5360258756_1920x1080.jpg" alt=""> -->
-            <img class="swiper-lazy" data-src="http://images.ioliu.cn/bing/ShanwangpingKarst_EN-AU5360258756_640x480.jpg" alt="">
-            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-          </div>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="assets/image/rental-general-1.jpg" alt="">
         </div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
+        <div class="swiper-slide">
+          <img src="assets/image/rental-general-2.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="assets/image/rental-general-3.jpg" alt="">
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
     </div>
-    </div>
-    <div fxFlex="35%">
+    <!-- <div fxFlex="35%">
       <dl>
         <dt>General Page</dt>
         <dd>There should be description of rental.</dd>
       </dl>
-    </div>
+    </div> -->
   </section>
   <section class="rental-show"
            fxFlexOrder="3">
@@ -68,4 +66,10 @@
       </dd>
     </dl>
   </section>
+</div>
+
+<div class="fab-wrapper">
+  <button mat-fab (click)="onSectionDown()">
+    <mat-icon>arrow_downward</mat-icon>
+  </button>
 </div>

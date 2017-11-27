@@ -1,6 +1,8 @@
+@import '~variables.scss';
+
 section {
     margin: 0;
-    padding: 40px;
+    height: 100vh;
     dt {
         font-weight: bold;
         line-height: 2em;
@@ -9,16 +11,29 @@ section {
         margin: 0;
     }
 }
+.rental-container {
+    transform: translateY(-$unit-desktop-toolbar);
+    @media screen and (max-width: $media-mobile-max){
+        transform: translateY(-$unit-mobile-toolbar);
+    }
+}
 .rental-logo {
     background: cyan;
-    img {
-        max-width: 100%
+    padding: 0;
+    .rental-logo-background {
+        background-image: url("~assets/image/rental-logo-bg.jpg");
+        background-size: cover;
+        background-position: center center;
+        height: 100vh;
     }
 }
 .rental-general {
     background: burlywood;
     img {
-        max-width: 100%;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center center;
     }
 }
 .rental-show {
