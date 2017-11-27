@@ -3,10 +3,13 @@
 
 mat-sidenav-container {
     flex: 1 1 100%;
+    @media screen and (max-width: $media-mobile-max){
+        overflow: inherit;
+    }
 }
 
 mat-sidenav {
-    width: 5 * $unit-one-increment;
+    width: 5 * $unit-desktop-one-increment;
     height: 100%;
     mat-card {
         .sidenav-avatar {
@@ -18,7 +21,7 @@ mat-sidenav {
 }
 
 mat-sidenav-content {
-    padding: $unit-screen-margin;
+    padding: $unit-desktop-screen-margin;
     mat-card {
         margin: 0;
         @include mat-elevation-transition;
@@ -35,7 +38,7 @@ mat-sidenav-content {
 }
 
 .card-container {
-    padding: $unit-space-between-content-areas;
+    padding: $unit-desktop-space-between-content-areas;
     &:focus {
         outline: none;
     }

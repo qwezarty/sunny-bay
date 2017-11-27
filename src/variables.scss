@@ -6,20 +6,27 @@
 
 // unit defination
 $unit-mobile: 56px;
-$unit-tablet: 64px;
-$unit-desktop: 72px;
-$unit-one-dp: $unit-tablet / 56;
-$unit-one-increment: 56 * $unit-one-dp;
+$unit-desktop: 64px;
+$unit-mobile-one-dp: $unit-mobile / 56;
+$unit-desktop-one-dp: $unit-desktop / 56;
+$unit-mobile-one-increment: 56 * $unit-mobile-one-dp;
+$unit-desktop-one-increment: 56 * $unit-desktop-one-dp;
 $media-mobile-max: 600px;
 $media-tablet-min: 601px;
 $media-tablet-max: 1024px;
 $media-desktop-min: 1025px;
 
 // material design general
-$unit-toolbar: 56 * $unit-one-dp;
-$unit-status-bar: 24 * $unit-one-dp;
-$unit-screen-margin: 16 * $unit-one-dp;
-$unit-content-left-margin: 72 * $unit-one-dp;
+$unit-mobile-toolbar: 56 * $unit-mobile-one-dp;
+$unit-desktop-toolbar: 56 * $unit-desktop-one-dp;
+$unit-mobile-status-bar: 24 * $unit-mobile-one-dp;
+$unit-desktop-status-bar: 24 * $unit-desktop-one-dp;
+$unit-mobile-screen-margin: 16 * $unit-mobile-one-dp;
+$unit-desktop-screen-margin: 16 * $unit-desktop-one-dp;
+$unit-mobile-content-left-margin: 72 * $unit-mobile-one-dp;
+$unit-desktop-content-left-margin: 72 * $unit-desktop-one-dp;
 // material design list
-$unit-list-item: 72 * $unit-one-dp;
-$unit-space-between-content-areas: 8 * $unit-one-dp;
+$unit-mobile-list-item: 72 * $unit-mobile-one-dp;
+$unit-desktop-list-item: 72 * $unit-desktop-one-dp;
+$unit-mobile-space-between-content-areas: 8 * $unit-mobile-one-dp;
+$unit-desktop-space-between-content-areas: 8 * $unit-desktop-one-dp;
