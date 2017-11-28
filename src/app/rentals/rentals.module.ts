@@ -8,12 +8,14 @@ import { MatIconModule } from '@angular/material';
 import { RentalsComponent } from './rentals.component';
 import { ThemeService } from '../shared/theme/theme.service';
 import { StylesheetService } from '../shared/stylesheet/stylesheet';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     RentalsRoutingModule,
     FlexLayoutModule,
+    SharedModule,
     MatButtonModule,
     MatIconModule,
   ],

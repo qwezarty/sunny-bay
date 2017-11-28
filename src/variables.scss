@@ -30,3 +30,7 @@ $unit-mobile-list-item: 72 * $unit-mobile-one-dp;
 $unit-desktop-list-item: 72 * $unit-desktop-one-dp;
 $unit-mobile-space-between-content-areas: 8 * $unit-mobile-one-dp;
 $unit-desktop-space-between-content-areas: 8 * $unit-desktop-one-dp;
+
+// urls used in css
+$url-base: 'http://p01akqt5z.bkt.clouddn.com/';
+$url-images: $url-base + 'images/';

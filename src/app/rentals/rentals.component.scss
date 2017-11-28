@@ -21,7 +21,7 @@ section {
     background: cyan;
     padding: 0;
     .rental-logo-background {
-        background-image: url("~assets/images/rental-logo-bg.jpg");
+        background-image: url($url-images + "rental-logo-bg.jpg");
         background-size: cover;
         background-position: center center;
         height: 100vh;
