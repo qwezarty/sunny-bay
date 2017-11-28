@@ -12,16 +12,16 @@ section {
     }
 }
 .rental-container {
-    transform: translateY(-$unit-desktop-toolbar);
+    // transform: translateY(-$unit-desktop-toolbar);
     @media screen and (max-width: $media-mobile-max){
-        transform: translateY(-$unit-mobile-toolbar);
+        // transform: translateY(-$unit-mobile-toolbar);
     }
 }
 .rental-logo {
     background: cyan;
     padding: 0;
     .rental-logo-background {
-        background-image: url("~assets/image/rental-logo-bg.jpg");
+        background-image: url("~assets/images/rental-logo-bg.jpg");
         background-size: cover;
         background-position: center center;
         height: 100vh;

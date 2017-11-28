@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { ThemeService } from '../shared/theme/theme.service';
 
 @Component({
   selector: 'app-rentals',
@@ -7,7 +8,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 })
 export class RentalsComponent implements OnInit, AfterViewInit {
 
-  constructor() { }
+  constructor(private themePicker: ThemeService) { }
 
   ngOnInit() {
   }
@@ -35,6 +36,12 @@ export class RentalsComponent implements OnInit, AfterViewInit {
     //   top: window.innerHeight,
     // });
 
+  }
+
+  onChangeTheme() {
+    this.themePicker.installTheme(
+      this.themePicker.themes[Math.ceil(Math.random() * 3)]
+    );
   }
 
 }

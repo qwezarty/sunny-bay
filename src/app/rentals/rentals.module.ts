@@ -6,6 +6,8 @@ import { MatButtonModule } from '@angular/material';
 import { MatIconModule } from '@angular/material';
 
 import { RentalsComponent } from './rentals.component';
+import { ThemeService } from '../shared/theme/theme.service';
+import { StylesheetService } from '../shared/stylesheet/stylesheet';
 
 @NgModule({
   imports: [
@@ -15,6 +17,7 @@ import { RentalsComponent } from './rentals.component';
     MatButtonModule,
     MatIconModule,
   ],
-  declarations: [RentalsComponent]
+  declarations: [RentalsComponent],
+  providers: [StylesheetService, ThemeService],
 })
 export class RentalsModule { }
