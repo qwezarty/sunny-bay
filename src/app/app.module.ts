@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
+import { Globals } from '../global';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { AppComponent } from './app.component';
     CoreModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [Globals],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
