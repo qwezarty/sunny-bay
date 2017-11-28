@@ -8,7 +8,6 @@ import { ThemeService } from './theme/theme.service';
   imports: [
     CommonModule
   ],
-  providers: [StylesheetService],
-  exports: [ThemeService],
+  providers: [StylesheetService]
 })
 export class SharedModule { }
