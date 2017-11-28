@@ -40,7 +40,7 @@ export class RentalsComponent implements OnInit, AfterViewInit {
 
   onChangeTheme() {
     this.themePicker.installTheme(
-      this.themePicker.themes[Math.ceil(Math.random() * 3)]
+      this.themePicker.themes[Math.floor(Math.random() * 4)]
     );
   }
 
