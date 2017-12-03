@@ -1,11 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
+// things to be importing
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/theming";
 @import "~swiper/dist/css/swiper.min.css";
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-// @import url('https://fonts.googleapis.com/earlyaccess/notosanssc.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
 @import url('https://fonts.googleapis.com/earlyaccess/notosansscsliced.css');
 @import "~variables.scss";
+
 
 // font-family
 html {
@@ -27,6 +29,11 @@ $font-color-light: rgba(0,0,0,0.54);
 body {
     color: $font-color-dense;
 }
+$custom-typography: mat-typography-config(
+    $font-family: 'Roboto, Arial, Helvetica, "Noto Sans SC Sliced", STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", sans-serif',
+    $headline: mat-typography-level(32px, 48px, 700),
+    $body-1: mat-typography-level(16px, 24px, 500)
+);
 
 // material component
 .fab-wrapper {
@@ -61,20 +68,24 @@ body {
     align-items: center;
     -webkit-align-items: center;
 }
-// .swiper-slide {
-//     text-align: center;
-//     font-size: 18px;
-//     /* Center slide text vertically */
-//     display: -webkit-box;
-//     display: -ms-flexbox;
-//     display: -webkit-flex;
-//     display: flex;
-//     -webkit-box-pack: center;
-//     -ms-flex-pack: center;
-//     -webkit-justify-content: center;
-//     justify-content: center;
-//     -webkit-box-align: center;
-//     -ms-flex-align: center;
-//     -webkit-align-items: center;
-//     align-items: center;
-// }
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+
+// things needs to be include & custormize
+@include mat-core($custom-typography);
