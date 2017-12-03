@@ -13,7 +13,7 @@ export class RentalsComponent implements OnInit, AfterViewInit {
   ngOnInit() {
   }
 
-  ngAfterViewInit(): void {
+  ngAfterViewInit() {
     const swiper = new Swiper('.swiper-container', {
       lazy: {
         loadPrevNext: true

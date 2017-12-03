@@ -14,6 +14,7 @@ import {
       } from '@angular/material';
 import { RoomListComponent } from './room-list/room-list.component';
 import { RoomDetailComponent } from './room-detail/room-detail.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { RoomDetailComponent } from './room-detail/room-detail.component';
     FlexLayoutModule,
     LayoutModule,
     RoomsRoutingModule,
+    SharedModule,
     MatIconModule,
     MatButtonModule,
     MatTabsModule,

@@ -1,64 +1,105 @@
 <div class="room-detail-container" fxLayout="column" fxLayoutAlign="space-around">
-  <section class="room-general"
+  <section class="room-general mat-elevation-z2"
            fxLayout="row"
-           fxLayoutAlign="space-between start"
+           fxLayoutAlign="space-between center"
            fxLayout.xs="column">
-    <video class="mat-elevation-z2"
-           poster="http://cms-origin-cn.battle.net/cms/gallery/EAKKB99UW6HF1509581523047.jpg"
-           src="https://flv2.bn.netease.com/videolib3/1711/04/uwieG3913/HD/uwieG3913-mobile.mp4"
-           preload="metadata"
-           controls="controls"
-           fxFlex="60%"></video>
-    <div fxFlex="35">
-      <!-- <dl>
-        <dt>A great room</dt>
-        <dd>
-          A facinating room only cast $199, what are you waiting for?
-        </dd>
-      </dl> -->
-      <h2>Great Room</h2>
+    <div class="swiper-container mat-elevation-z2"
+         fxFlex="65">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img appElementSrc="detail-slider-1.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img appElementSrc="detail-slider-2.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img appElementSrc="detail-slider-3.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img appElementSrc="detail-slider-4.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img appElementSrc="detail-slider-5.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img appElementSrc="detail-slider-6.jpg" alt="">
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div fxFlex></div>
+    <div class="room-general-desc" fxFlex="30">
+      <h1>板栗景观 套房</h1>
+      <h2>$188</h2>
       <dl>
-        <dt>Description</dt>
-        <dd>A facinating room only cast $199.</dd>
+        <dt>描述</dt>
+        <dd>这是一个金闪闪的房间</dd>
         <br>
-        <dt>Features</dt>
+        <dt>亮点</dt>
         <dd>
-          <li>Modern designed room.</li>
-          <li>With full balcony.</li>
-          <li>Good for two people.</li>
-          <li>Delicious dinner for free.</li>
+          <li>50m2复式套房</li>
+          <li>1.8m大床+1.2m儿童床</li>
+          <li>包含三份早餐</li>
         </dd>
       </dl>
-      <button mat-raised-button color="accent">Order Now</button>
+      <button mat-button color="accent">观看视频</button>
+      <button mat-raised-button color="accent">立即预定</button>
+      <!-- <video class="mat-elevation-z2"
+            poster="http://cms-origin-cn.battle.net/cms/gallery/EAKKB99UW6HF1509581523047.jpg"
+            src="https://flv2.bn.netease.com/videolib3/1711/04/uwieG3913/HD/uwieG3913-mobile.mp4"
+            preload="metadata"
+            controls="controls"
+            fxFlex="60%"></video> -->
     </div>
   </section>
   <mat-tab-group>
-    <mat-tab label="Show Room">
-      <section class="room-detail-1">
-        <dl>
-          <dt>Show Room</dt>
-          <dd>
-            A brief introduction to features of room
-          </dd>
-        </dl>
+    <mat-tab label="房间详情">
+      <section class="room-detail"
+               fxLayout="column"
+               fxLayoutAlign="space-between none">
+        <div fxFlex>
+          <img appElementSrc="detail-content-1.jpg">
+        </div>
+        <div fxFlex>
+          <h1>西式大客厅</h1>
+          <dd>主人特地选了北欧风格的家具布置客厅。</dd>
+          <dd>客厅带有sony电视，外置音箱。</dd>
+          <dd>连接客厅的阳台足够大，民宿提供瑜伽设备，可供客人做瑜伽锻炼。</dd>
+          <dd>电热水壶和茶具放在客厅的显眼位置，方便客人取用。</dd>
+        </div>
+      </section>
+      <section class="room-detail"
+               fxLayout="column"
+               fxLayoutAlign="space-between none">
+        <div fxFlex>
+          <img appElementSrc="detail-content-2.jpg">
+        </div>
+        <div fxFlex>
+          <h1>敞开式浴房</h1>
+          <dd>浴室与房间融为一体，希望度假的您，展开身心。</dd>
+          <dd>迎面的山景，泡澡的同时，还能欣赏山景。</dd>
+        </div>
+      </section>
+      <section class="room-detail"
+               fxLayout="column"
+               fxLayoutAlign="space-between none">
+        <div fxFlex>
+          <img appElementSrc="detail-content-3.jpg">
+        </div>
+        <div fxFlex>
+          <h1>Loft式</h1>
+          <dd>设计这个家庭套房时，女主人DIY了一个宝宝玩乐的小帐篷。</dd>
+          <dd>全封闭的楼梯，给您和您的家人足够的安全感。</dd>
+          <dd>榻榻米型的垫子，给宝宝一个充足的活动空间。</dd>
+        </div>
       </section>
     </mat-tab>
-    <mat-tab label="Room Detail">
-      <section class="room-detail-2">
+    <mat-tab label="入住须知">
+      <section class="">
         <dl>
           <dt>Room Detail</dt>
           <dd>
             There should be description of room detail.
-          </dd>
-        </dl>
-      </section>
-    </mat-tab>
-    <mat-tab label="Discover & Contact">
-      <section class="room-detail-3">
-        <dl>
-          <dt>Discovery</dt>
-          <dd>
-            Want to find some cool things around? Check here!
           </dd>
         </dl>
       </section>
