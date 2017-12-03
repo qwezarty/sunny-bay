@@ -31,6 +31,9 @@ import { SharedModule } from '../shared/shared.module';
     MatListModule,
     MatSlideToggleModule,
   ],
-  declarations: [RoomListComponent, RoomDetailComponent]
+  declarations: [
+    RoomListComponent,
+    RoomDetailComponent,
+  ],
 })
 export class RoomsModule { }

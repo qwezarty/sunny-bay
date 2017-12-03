@@ -1,4 +1,6 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Inject, style, ViewChild, ViewContainerRef } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material';
+import { MatVideoDialogComponent } from '../../shared/mat-video-dialog/mat-video-dialog.component';
 
 @Component({
   selector: 'app-room-detail',
@@ -6,7 +8,9 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
   styleUrls: ['./room-detail.component.scss'],
 })
 export class RoomDetailComponent implements OnInit, AfterViewInit {
-  constructor() { }
+  @ViewChild('videoContainer') videoContainer;
+
+  constructor(private videoDialog: MatDialog) { }
 
   ngOnInit() {
   }
@@ -24,5 +28,17 @@ export class RoomDetailComponent implements OnInit, AfterViewInit {
     });
   }
 
+  onWatchVideo() {
+    const videoDialogRef = this.videoDialog.open(
+      MatVideoDialogComponent,
+      {
+        data: {
+          title: 'some-video',
+          src: 'https://flv2.bn.netease.com/videolib3/1711/04/uwieG3913/HD/uwieG3913-mobile.mp4',
+          poster: 'http://cms-origin-cn.battle.net/cms/gallery/EAKKB99UW6HF1509581523047.jpg',
+        },
+      }
+    );
+  }
 
 }

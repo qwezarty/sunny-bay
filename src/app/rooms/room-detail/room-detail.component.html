@@ -4,7 +4,7 @@
            fxLayoutAlign="space-between center"
            fxLayout.xs="column">
     <div class="swiper-container mat-elevation-z2"
-         fxFlex="65">
+         fxFlex="60">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <img appElementSrc="detail-slider-1.jpg" alt="">
@@ -27,22 +27,24 @@
       </div>
       <div class="swiper-pagination"></div>
     </div>
-    <div fxFlex></div>
+    <div fxFlex="5"></div>
     <div class="room-general-desc" fxFlex="30">
       <h1>板栗景观 套房</h1>
-      <h2>$188</h2>
+      <h2>￥1088</h2>
       <dl>
-        <dt>描述</dt>
-        <dd>这是一个金闪闪的房间</dd>
+        <dd>
+          景观套房分为上下两层，一楼客厅，二楼是 卧室。
+          大面积的落地窗让房间充满自然的颜色， 一张大床，一张儿童床，非常适合带孩子的家庭入住。
+        </dd>
         <br>
         <dt>亮点</dt>
         <dd>
-          <li>50m2复式套房</li>
-          <li>1.8m大床+1.2m儿童床</li>
-          <li>包含三份早餐</li>
+          <li>50㎡loft型公寓式套房</li>
+          <li>大面积落地窗，欣赏自然景色</li>
+          <li>含3份早餐（另加早餐到店请告知）</li>
         </dd>
       </dl>
-      <button mat-button color="accent">观看视频</button>
+      <button mat-button color="accent" (click)="onWatchVideo(roomGeneralVideo)">观看视频</button>
       <button mat-raised-button color="accent">立即预定</button>
       <!-- <video class="mat-elevation-z2"
             poster="http://cms-origin-cn.battle.net/cms/gallery/EAKKB99UW6HF1509581523047.jpg"
@@ -51,6 +53,7 @@
             controls="controls"
             fxFlex="60%"></video> -->
     </div>
+    <div fxFlex="5"></div>
   </section>
   <mat-tab-group>
     <mat-tab label="房间详情">
@@ -78,6 +81,7 @@
           <h1>敞开式浴房</h1>
           <dd>浴室与房间融为一体，希望度假的您，展开身心。</dd>
           <dd>迎面的山景，泡澡的同时，还能欣赏山景。</dd>
+          <dd>浴缸足够大，我们为您准备了来自法国的欧舒丹洗漱用品。</dd>
         </div>
       </section>
       <section class="room-detail"
