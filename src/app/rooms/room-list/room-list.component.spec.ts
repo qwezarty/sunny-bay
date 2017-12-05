@@ -1,14 +1,24 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { RoomListComponent } from './room-list.component';
-import { RoomsModule } from '../rooms.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterTestingModule } from '@angular/router/testing';
+import {
+  async,
+  ComponentFixture,
+  TestBed,
+  ComponentFixtureAutoDetect,
+} from '@angular/core/testing';
 import { exec } from 'child_process';
+import { By } from '@angular/platform-browser';
+import { DebugElement } from '@angular/core';
+
+import { RouterTestingModule } from '@angular/router/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RoomsModule } from '../rooms.module';
+import { RoomListComponent } from './room-list.component';
+import { Globals } from '../../../global';
 
 describe('TestComponent', () => {
   let component: RoomListComponent;
   let fixture: ComponentFixture<RoomListComponent>;
+  // let de: DebugElement;
+  // let el: HTMLElement;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -16,8 +26,12 @@ describe('TestComponent', () => {
         RoomsModule,
         BrowserAnimationsModule,
         RouterTestingModule,
+      ],
+      providers: [
+        { provide: ComponentFixtureAutoDetect, useValue: true },
+        { provide: Globals, useValue: false }
       ]
-      })
+    })
       .compileComponents();
   }));
 
