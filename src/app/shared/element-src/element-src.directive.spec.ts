@@ -39,9 +39,9 @@ describe('ElementSrcDirective', () => {
 
     it('should work fine at img tag', () => {
         de = fixture.debugElement.query(By.css('img'));
-        const imgSrc = de.nativeElement.src;
+        const imgSrc = de.attributes['src'];
         expect(imgSrc).toBe(
-            globals.Envs.HTML_IMAGE_SRC + 'sample.jpg'
+            globals.Envs.HTML_IMAGE_SRC + 'test.jpg'
         );
     });
 
@@ -51,7 +51,7 @@ describe('ElementSrcDirective', () => {
 
 @Component({
     template: `
-    <img appElementSrc="sample.jpg">
+    <img appElementSrc="test.jpg">
     `
 })
 class TestElementSrcComponent { }
