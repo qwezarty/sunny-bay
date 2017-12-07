@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, Inject, style, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Inject, ViewChild, ViewContainerRef } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { MatVideoDialogComponent } from '../../shared/mat-video-dialog/mat-video-dialog.component';
 
@@ -8,8 +8,6 @@ import { MatVideoDialogComponent } from '../../shared/mat-video-dialog/mat-video
   styleUrls: ['./room-detail.component.scss'],
 })
 export class RoomDetailComponent implements OnInit, AfterViewInit {
-  @ViewChild('videoContainer') videoContainer;
-
   constructor(private videoDialog: MatDialog) { }
 
   ngOnInit() {

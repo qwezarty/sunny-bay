@@ -20,7 +20,6 @@ export class MatVideoDialogComponent implements OnInit {
 
   ngOnInit() {
     const dialogContainer = this.elementRef.nativeElement.parentElement;
-    console.log(dialogContainer);
     this.render.setStyle(
       dialogContainer,
       'padding',
