@@ -1,5 +1,5 @@
-import { Component, OnInit, AfterViewInit, Inject, ViewChild, ViewContainerRef } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
 import { MatVideoDialogComponent } from '../../shared/mat-video-dialog/mat-video-dialog.component';
 
 @Component({

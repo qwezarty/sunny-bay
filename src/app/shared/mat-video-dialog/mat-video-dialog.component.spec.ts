@@ -5,7 +5,6 @@ import {
 } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NgModule, Component, DebugElement, } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { MatVideoDialogComponent } from './mat-video-dialog.component';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
