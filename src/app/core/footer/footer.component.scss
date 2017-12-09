@@ -1,28 +1,22 @@
-.nav {
-    list-style: none;
-    padding: 0 1em 0 0;
-    background: deepskyblue;
-    border-radius: 5px;
-    li {
-        text-align: center;
+mat-toolbar {
+    background: #eceff1;
+    color: #92989b;
+    mat-toolbar-row {
+        width: unset;
     }
+}
+.nav {
     a {
-        font-weight: bold;
+        color: inherit;
         text-decoration: none;
-        color: white;
-        padding: 1em;
+        padding: 0;
         display: block;
     }
 }
-.nav-md {
-    background: none;
-    padding: 0;
-    li {
-        background: deepskyblue;
-        border-top: 1px solid rgba(255, 255, 255, 0.3);
-        border-left: 1px solid rgba(255, 255, 255, 0.3);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        border-right: 1px solid rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
+.policy {
+    p {
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
     }
 }

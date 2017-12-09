@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit, OnDestroy, ElementRef, Renderer2 } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Observable } from 'rxjs/Observable';
@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: './room-list.component.html',
   styleUrls: ['./room-list.component.scss']
 })
-export class RoomListComponent implements OnInit {
+export class RoomListComponent implements OnInit, OnDestroy {
   footerEleRef: ElementRef;
   sidenav: { 'mode': string, 'opened': string } = { 'mode': 'side', 'opened': 'true' };
   filterOptions: { 'value': string, 'checked': boolean, 'disabled': boolean }[] = [
@@ -53,6 +53,10 @@ export class RoomListComponent implements OnInit {
     this.observeDevice();
   }
 
+  ngOnDestroy() {
+    this.installGlobalFooter();
+  }
+
   observeDevice() {
     this.breakpointService.observe([
       '(max-width:1024px)'
@@ -84,6 +88,13 @@ export class RoomListComponent implements OnInit {
 
   removeGlobalFooter() {
     this.renderer.setAttribute(
+      this.footerEleRef,
+      'hidden', ''
+    );
+  }
+
+  installGlobalFooter() {
+    this.renderer.removeAttribute(
       this.footerEleRef,
       'hidden', ''
     );

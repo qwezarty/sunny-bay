@@ -1,9 +1,20 @@
-<footer item-width="100%">
-    <!-- <ul ngClass="nav" ngClass.lt-md="nav nav-md" ngClass.lt-xs="nav nav-xs"
+<footer>
+    <!-- <div></div>
+    <ul ngClass="nav" ngClass.lt-md="nav nav-md" ngClass.lt-xs="nav nav-xs"
         fxLayout="row" fxLayout.xs="column"
         fxLayoutAlign="end" fxLayoutAlign.lt-md="space-around">
-        <li fxFlex="none" fxFlex.lt-md><a routerLink="/home">Home</a></li>
-        <li fxFlex="none" fxFlex.lt-md><a routerLink="/rentals/some-company-name">Rentals</a></li>
-        <li fxFlex="none" fxFlex.lt-md><a routerLink="">Boot</a></li>
+        <li fxFlex="none" fxFlex.lt-md><a routerLink="">工作机会</a></li>
+        <li fxFlex="none" fxFlex.lt-md><a routerLink="">关于我们</a></li>
     </ul> -->
+    <mat-toolbar fxLayout
+                 fxLayoutAlign="space-between center">
+        <mat-toolbar-row class="nav" fxFlex>
+            <a routerLink=""><button mat-button>Sunny Bay</button></a>
+            <a routerLink=""><button mat-button>About</button></a>
+            <a routerLink=""><button mat-button>Recruit</button></a>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="policy">
+            <p>Powered by SunnyBay ©2017-2018. Code licensed under an GPLV3-style License.</p>
+        </mat-toolbar-row>
+    </mat-toolbar>
 </footer>
