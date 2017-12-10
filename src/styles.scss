@@ -30,9 +30,7 @@ body {
     color: $font-color-dense;
 }
 $custom-typography: mat-typography-config(
-    $font-family: 'Roboto, Arial, Helvetica, "Noto Sans SC Sliced", STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", sans-serif',
-    $headline: mat-typography-level(32px, 48px, 700),
-    $body-1: mat-typography-level(16px, 24px, 500)
+    $font-family: 'Roboto, Arial, Helvetica, "Noto Sans SC Sliced", STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", sans-serif'
 );
 
 // material component
@@ -57,6 +55,21 @@ app-room-list {
 body {
     margin: 0;
 }
+::-webkit-scrollbar
+{
+	width: 8px;
+}
+@media screen and (max-width: $media-mobile-max) {
+    ::-webkit-scrollbar
+    {
+        width: 6px;
+    }
+}
+::-webkit-scrollbar-thumb
+{
+    background: hsla(0, 0%, 53.3%, .4)
+}
+
 
 // swiper.js
 .swiper-container {
