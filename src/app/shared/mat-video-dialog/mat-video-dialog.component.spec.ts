@@ -49,7 +49,6 @@ describe('MatVideoDialog', () => {
         fixture.detectChanges();
         dialogContainer = overlayContainerElement.querySelector('mat-dialog-container') as HTMLElement;
         expect(dialogContainer.getAttribute('role')).toBe('dialog');
-        console.log(overlayContainerElement);
     });
 
     it('should contain a video tag', () => {
