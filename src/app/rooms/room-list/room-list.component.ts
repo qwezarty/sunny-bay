@@ -11,13 +11,13 @@ import { Observable } from 'rxjs/Observable';
 export class RoomListComponent implements OnInit, OnDestroy {
   footerEleRef: ElementRef;
   sidenav: { 'mode': string, 'opened': string } = { 'mode': 'side', 'opened': 'true' };
-  filterOptions: { 'value': string, 'checked': boolean, 'disabled': boolean }[] = [
-    { 'value': '全部', 'checked': true, 'disabled': false },
-    { 'value': '编辑精选', 'checked': true, 'disabled': false },
-    { 'value': '一线山景', 'checked': true, 'disabled': false },
-    { 'value': '跃层设计', 'checked': true, 'disabled': false },
-    { 'value': '超大阳台', 'checked': true, 'disabled': false },
-    { 'value': '附带早餐', 'checked': true, 'disabled': false },
+  filterOptions: { 'value': string, 'content': string, 'checked': boolean, 'disabled': boolean }[] = [
+    { 'value': 'all', 'content': '显示全部', 'checked': true, 'disabled': false },
+    { 'value': '', 'content': '当季精选', 'checked': true, 'disabled': false },
+    { 'value': '', 'content': '一线山景', 'checked': true, 'disabled': false },
+    { 'value': '', 'content': '超大阳台', 'checked': true, 'disabled': false },
+    { 'value': '', 'content': '跃层设计', 'checked': true, 'disabled': false },
+    { 'value': '', 'content': '附带早餐', 'checked': true, 'disabled': false },
   ];
   contentCards: { 'img': string, 'title': string, 'content': string }[] = [
     { img: 'room-list-1.jpg', title: '木香山景房',
@@ -91,12 +91,11 @@ export class RoomListComponent implements OnInit, OnDestroy {
   }
 
   onToggleChange(filterOption) {
+    // todo re-coding filter logic
     filterOption.checked = !filterOption.checked;
-    console.log(filterOption);
-    console.log(this.filterOptions);
-    if (filterOption.value === 'All') {
+    if (filterOption.value === 'all') {
       this.filterOptions.filter((option) => {
-        return option.value !== 'All';
+        return option.value !== 'all';
       }).forEach((option) => {
         option.checked = filterOption.checked ? true : false;
       });
