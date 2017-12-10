@@ -1,6 +1,8 @@
+@import '~variables.scss';
+
 mat-toolbar {
-    background: #eceff1;
-    color: #92989b;
+    background: $color-background-footer;
+    color: $color-footer;
     mat-toolbar-row {
         width: unset;
     }
@@ -10,7 +12,6 @@ mat-toolbar {
         color: inherit;
         text-decoration: none;
         padding: 0;
-        display: block;
     }
 }
 .policy {
