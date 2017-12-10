@@ -6,38 +6,28 @@ import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'app-room-list',
   templateUrl: './room-list.component.html',
-  styleUrls: ['./room-list.component.scss']
+  styleUrls: ['./room-list.component.scss'],
 })
 export class RoomListComponent implements OnInit, OnDestroy {
   footerEleRef: ElementRef;
   sidenav: { 'mode': string, 'opened': string } = { 'mode': 'side', 'opened': 'true' };
   filterOptions: { 'value': string, 'checked': boolean, 'disabled': boolean }[] = [
-    { 'value': 'All', 'checked': true, 'disabled': false },
-    { 'value': 'Deluxe Suite', 'checked': true, 'disabled': false },
-    { 'value': 'Single Room', 'checked': true, 'disabled': false },
-    { 'value': 'Standard Room', 'checked': true, 'disabled': false },
+    { 'value': '全部', 'checked': true, 'disabled': false },
+    { 'value': '编辑精选', 'checked': true, 'disabled': false },
+    { 'value': '一线山景', 'checked': true, 'disabled': false },
+    { 'value': '跃层设计', 'checked': true, 'disabled': false },
+    { 'value': '超大阳台', 'checked': true, 'disabled': false },
+    { 'value': '附带早餐', 'checked': true, 'disabled': false },
   ];
-  contentCards: { 'img': string, 'head': string, 'content': string }[] = [
-    { img: 'http://images.ioliu.cn/bing/LeuchtturmWarnemuende_EN-AU8137822331_640x480.jpg',
-      head: '',
-      content: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.` },
-    { img: 'http://images.ioliu.cn/bing/LeuchtturmWarnemuende_EN-AU8137822331_640x480.jpg',
-      head: '',
-      content: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.` },
-    { img: 'http://images.ioliu.cn/bing/LeuchtturmWarnemuende_EN-AU8137822331_640x480.jpg',
-      head: '',
-      content: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.` },
-    { img: 'http://images.ioliu.cn/bing/LeuchtturmWarnemuende_EN-AU8137822331_640x480.jpg',
-      head: '',
-      content: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.` },
+  contentCards: { 'img': string, 'title': string, 'content': string }[] = [
+    { img: 'room-list-1.jpg', title: '木香山景房',
+      content: `大面积的落地窗设计，能让你时刻享受山里的美景。宽敞的阳台，足以让您铺设瑜伽垫。` },
+    { img: 'room-list-2.jpg', title: '板栗景观房',
+      content: `LOFTER型公寓式设计，一层为带壁炉的客厅。二层独立卧室，迎面山景。` },
+    { img: 'room-list-3.jpg', title: '核桃亲子房',
+      content: `独特双层亲子套房，位于一层的沙发能让您享受午后的美好。二层独立的床铺，专为儿童设计。` },
+    { img: 'room-list-4.jpg', title: '松果景观房',
+      content: `日式榻榻米房间，还附有小清新的阁楼，是整栋民宿视野最为宽广的地方。` },
   ];
   isChecked = false;
 

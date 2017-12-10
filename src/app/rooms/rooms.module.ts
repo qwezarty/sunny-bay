@@ -9,7 +9,6 @@ import {
         MatTabsModule,
         MatSidenavModule,
         MatCardModule,
-        MatListModule,
         MatSlideToggleModule,
       } from '@angular/material';
 import { RoomListComponent } from './room-list/room-list.component';
@@ -28,7 +27,6 @@ import { SharedModule } from '../shared/shared.module';
     MatTabsModule,
     MatSidenavModule,
     MatCardModule,
-    MatListModule,
     MatSlideToggleModule,
   ],
   declarations: [
