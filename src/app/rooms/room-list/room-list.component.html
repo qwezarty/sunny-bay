@@ -48,6 +48,7 @@
       <mat-card class="main-card">
         <img mat-card-image [appElementSrc]="content.img">
         <mat-card-title>{{ content.title }}</mat-card-title>
+        <mat-card-subtitle>{{ content.price | currency:'CNY':'symbol-narrow':'1.0' }}</mat-card-subtitle>
         <mat-card-content>
           <p>{{ content.content }}</p>
         </mat-card-content>
