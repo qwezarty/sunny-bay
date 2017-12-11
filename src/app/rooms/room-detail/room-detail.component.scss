@@ -20,7 +20,8 @@ img {
 .room-general {
     background: lightblue;
     padding: 0;
-    .room-general-desc {
+    .room-general-desc-lt-md {
+        padding: 40px;
     }
 }
 .room-detail {

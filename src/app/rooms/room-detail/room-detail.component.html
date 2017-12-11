@@ -1,8 +1,9 @@
 <div class="room-detail-container" fxLayout="column" fxLayoutAlign="space-around">
   <section class="room-general mat-elevation-z2"
            fxLayout="row"
+           fxLayout.lt-md="column"
            fxLayoutAlign="space-between center"
-           fxLayout.xs="column">
+           fxLayoutAlign.lt-md="space-between stretch">
     <div class="swiper-container mat-elevation-z2"
          fxFlex="60">
       <div class="swiper-wrapper">
@@ -28,7 +29,9 @@
       <div class="swiper-pagination"></div>
     </div>
     <div fxFlex="5"></div>
-    <div class="room-general-desc" fxFlex="30">
+    <div class="room-general-desc" 
+         ngClass.lt-md="room-general-desc-lt-md" 
+         fxFlex="30">
       <h1>板栗景观 套房</h1>
       <h2>￥1088</h2>
       <dl>
