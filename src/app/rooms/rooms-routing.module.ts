@@ -7,6 +7,7 @@ import { RoomDetailComponent } from './room-detail/room-detail.component';
 const routes: Routes = [
   { path: '', component: RoomListComponent },
   { path: ':id', component: RoomDetailComponent },
+  { path: ':id/reservation', loadChildren: '../reservation/reservation.module#ReservationModule'}
 ];
 
 @NgModule({
