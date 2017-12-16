@@ -9,10 +9,16 @@
       <mat-card>
         <img mat-card-image [appElementSrc]="content.img">
         <mat-card-title>{{ content.title }}</mat-card-title>
-        <mat-card-subtitle>{{ content.price | currency:'CNY':'symbol-narrow':'1.0' }}</mat-card-subtitle>
-        <!-- <mat-card-content>
-          <p>{{ content.content }}</p>
-        </mat-card-content> -->
+        <!-- <mat-card-subtitle>{{ content.price | currency:'CNY':'symbol-narrow':'1.0' }}</mat-card-subtitle> -->
+        <mat-card-content>
+          <p>单价：{{ content.price | currency:'CNY':'symbol-narrow':'1.0' }} / 晚</p>
+          <p>入住日期：{{ inDate.toLocaleDateString() | date }}</p>
+          <p *ngIf="outDate? true : false">离店日期：{{ outDate.toLocaleDateString() | date }}</p>
+          <p *ngIf="(inDate && outDate)? true : false">共计：{{ caculateTotalNights() }} 晚</p>
+          <p *ngIf="(inDate && outDate)? true : false">总计金额：{{ caculateTotalCosts() | currency:'CNY':'symbol-narrow':'1.0'}}</p>
+          <p *ngIf="contact.name">联系人姓名：{{ contact.name }}</p>
+          <p *ngIf="contact.phone">联系人电话：{{ contact.phone }}</p>
+        </mat-card-content>
       </mat-card>
     </div>
   </section>
@@ -29,6 +35,7 @@
                  [formControl]="inDateControl"
                  [min]="inMinDate"
                  [max]="inMaxDate"
+                 name="inDate"
                  [(ngModel)]="inDate"
                  placeholder="入住日期"
                  (click)="inPicker.open()">
@@ -45,6 +52,7 @@
                  [formControl]="outDateControl"
                  [min]="outMinDate"
                  [max]="outMaxDate"
+                 name="outDate"
                  [(ngModel)]="outDate"
                  placeholder="离开日期"
                  (click)="outPicker.open()">
@@ -55,14 +63,14 @@
         <mat-icon>person</mat-icon>
         <div fxFlex="3"></div>
         <mat-form-field fxFlex>
-          <input matInput type="text" placeholder="联系人姓名">
+          <input matInput type="text" placeholder="联系人姓名" name="name" [(ngModel)]="contact.name">
         </mat-form-field>
       </div>
       <div class="control-container" fxLayout fxLayoutAlign="space-between center">
         <mat-icon>phone</mat-icon>
         <div fxFlex="3"></div>
         <mat-form-field fxFlex>
-          <input matInput type="tel" placeholder="联系人手机">
+          <input matInput type="tel" placeholder="联系人手机" name="phone" [(ngModel)]="contact.phone">
         </mat-form-field>
       </div>
     </form>

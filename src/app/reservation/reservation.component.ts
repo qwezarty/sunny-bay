@@ -11,6 +11,7 @@ export class ReservationComponent implements OnInit {
     img: 'room-list-1.jpg', title: '木香山景房', price: 780,
     content: `大面积的落地窗设计，能让你时刻享受山里的美景。宽敞的阳台，足以让您铺设瑜伽垫。`
   };
+  contact: { 'name': string, 'phone': string } = { 'name': '', 'phone': '' };
 
   // check-in date property
   private _inDate: Date;
@@ -23,7 +24,7 @@ export class ReservationComponent implements OnInit {
     this.outDate = null;
     this._inDate = date;
     // we should also set the check-out min&max date
-    this.outMinDate = this.cloneDate(this._inDate);
+    this.outMinDate = this.caculateOutMinDate(this._inDate);
     this.outMaxDate = this.caculateOutMaxDate(this._inDate);
   }
   // check-in min&max date
@@ -40,9 +41,9 @@ export class ReservationComponent implements OnInit {
     this._outDate = date;
   }
   // check-out min&max date
-  // todo we should compare these two date dynamicly
-  outMinDate = this.cloneDate(this.inDate);
-  outMaxDate = this.caculateOutMaxDate(this.inDate);
+  // this value will be initialized when check-in date be given
+  outMinDate: Date;
+  outMaxDate: Date;
   outDateControl = new FormControl();
 
   constructor() { }
@@ -53,6 +54,22 @@ export class ReservationComponent implements OnInit {
   private caculateOutMaxDate(inDate: Date): Date {
     // todo logic: set max reservation duration, say, 10 days
     return this.cloneDateAndAddDays(inDate, 10);
+  }
+
+  private caculateOutMinDate(inDate: Date): Date {
+    // todo logic: set max reservation duration, say, 10 days
+    return this.cloneDateAndAddDays(inDate, 1);
+  }
+
+  private caculateTotalNights(): number {
+    // todo add negative validation
+    const diff = this.outDate.getTime() - this.inDate.getTime();
+    return Math.ceil(diff / (1000 * 3600 * 24));
+  }
+
+  private caculateTotalCosts(): number {
+    const nights = this.caculateTotalNights();
+    return nights * this.content.price;
   }
 
   private cloneDateAndAddDays(date: Date, days: number): Date {
