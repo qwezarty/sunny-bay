@@ -1,3 +1,70 @@
-<p>
-  reservation works!
-</p>
+<div class="reservation-container" fxLayout="row" fxLayout.xs="column">
+  <section class="check" fxFlex="1 1 40" fxLayout="column">
+    <div class="rental mat-elevation-z2" fxFlex="50" fxLayout="column" fxLayoutAlign="space-bwtween center">
+      <img appElementSrc="rental-logo.svg">
+      <div fxFlex="3" fxFlex.xs="10"></div>
+      <div class="title" ngClass="mat-h1">大乐之野 绿山墙</div>
+    </div>
+    <div class="room" fxFlex>
+      <mat-card>
+        <img mat-card-image [appElementSrc]="content.img">
+        <mat-card-title>{{ content.title }}</mat-card-title>
+        <mat-card-subtitle>{{ content.price | currency:'CNY':'symbol-narrow':'1.0' }}</mat-card-subtitle>
+        <!-- <mat-card-content>
+          <p>{{ content.content }}</p>
+        </mat-card-content> -->
+      </mat-card>
+    </div>
+  </section>
+
+  <section class="control" fxFlex="2 2 60" fxLayout>
+    <form class="mat-elevation-z2" fxFlex="100">
+      <div class="control-container" fxLayout fxLayoutAlign="space-between center">
+        <mat-icon>date_range</mat-icon>
+        <div fxFlex="3"></div>
+        <mat-form-field fxFlex>
+          <input readonly
+                 matInput
+                 [matDatepicker]="inPicker"
+                 [formControl]="inDateControl"
+                 [min]="inMinDate"
+                 [max]="inMaxDate"
+                 [(ngModel)]="inDate"
+                 placeholder="入住日期"
+                 (click)="inPicker.open()">
+          <mat-datepicker touchUi="true" #inPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="control-container" fxLayout fxLayoutAlign="space-between center">
+        <mat-icon>date_range</mat-icon>
+        <div fxFlex="3"></div>
+        <mat-form-field fxFlex>
+          <input readonly
+                 matInput
+                 [matDatepicker]="outPicker"
+                 [formControl]="outDateControl"
+                 [min]="outMinDate"
+                 [max]="outMaxDate"
+                 [(ngModel)]="outDate"
+                 placeholder="离开日期"
+                 (click)="outPicker.open()">
+          <mat-datepicker touchUi="true" #outPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="control-container" fxLayout fxLayoutAlign="space-between center">
+        <mat-icon>person</mat-icon>
+        <div fxFlex="3"></div>
+        <mat-form-field fxFlex>
+          <input matInput type="text" placeholder="联系人姓名">
+        </mat-form-field>
+      </div>
+      <div class="control-container" fxLayout fxLayoutAlign="space-between center">
+        <mat-icon>phone</mat-icon>
+        <div fxFlex="3"></div>
+        <mat-form-field fxFlex>
+          <input matInput type="tel" placeholder="联系人手机">
+        </mat-form-field>
+      </div>
+    </form>
+  </section>
+</div>

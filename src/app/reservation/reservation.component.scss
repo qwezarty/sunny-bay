@@ -1,0 +1,28 @@
+@import '~variables.scss';
+
+section {
+    margin: 0;
+    padding: 25px;
+}
+.rental {
+    background: lightblue;
+    padding-top: 20px;
+    margin-bottom: 25px;
+    img {
+        width: 100%;
+        height: 100%;
+        width: $unit-desktop-one-increment;
+        height: $unit-desktop-one-increment;
+    }
+}
+.control {
+    padding-left: 0;
+}
+form {
+    padding: 25px;
+    .control-container {
+        input {
+            width: 100%;
+        }
+    }
+}
