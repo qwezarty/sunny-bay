@@ -2,7 +2,7 @@
 
 section {
     margin: 0;
-    height: 100vh;
+    padding: 40px;
     dt {
         font-weight: bold;
         line-height: 2em;
@@ -11,30 +11,35 @@ section {
         margin: 0;
     }
 }
-.rental-container {
-    // transform: translateY(-$unit-desktop-toolbar);
-    @media screen and (max-width: $media-mobile-max){
-        // transform: translateY(-$unit-mobile-toolbar);
-    }
+img {
+    width: 100%;
+    height: 100%;
+    // object-fit: cover;
+    // object-position: center center;
 }
 .rental-logo {
-    background: cyan;
+    background: lightblue;
     padding: 0;
-    .rental-logo-background {
-        background-image: url($url-images + "rental-logo-bg.jpg");
-        background-size: cover;
-        background-position: center center;
-        height: 100vh;
+    height: 25vh;
+    position: relative;
+    .title {
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+    }
+    img {
+        width: $unit-desktop-one-increment;
+        height: $unit-desktop-one-increment;
+    }
+    button {
+        z-index: 2;
+        position: absolute;
+        right: 8vw;
+        bottom: -(56px / 2);
     }
 }
 .rental-general {
     background: burlywood;
-    img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        object-position: center center;
-    }
 }
 .rental-show {
     background: coral;

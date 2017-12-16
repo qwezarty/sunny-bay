@@ -1,52 +1,54 @@
 <div class="rental-container" fxLayout="column" fxLayoutAlign="space-around">
-  <button mat-raised-button color="primary" (click)="onChangeTheme()">ChangeTheme</button>
+  <!-- <button mat-raised-button color="primary" (click)="onChangeTheme()">ChangeTheme</button> -->
   <section class="rental-logo" 
            fxFlexOrder="1"
            fxLayout="row"
            fxLayout.xs="column"
-           fxLayoutAlign="space-around center">
-    <div class="rental-logo-background" fxFlex="100">
-
-    <!-- <img fxFlex="50" fxFlex.xs="90" src="http://images.ioliu.cn/bing/SecretaryHunt_PT-BR11569265072_640x480.jpg" alt=""> -->
-    <!-- <div fxFlex="60%">
-      <img src="http://images.ioliu.cn/bing/SecretaryHunt_PT-BR11569265072_1920x1080.jpg" alt="">
-    </div> -->
-    <!-- <div fxFlex="35%">
-      <dl>
-        <dt>日光海岸</dt>
-        <dd>提供优秀的民宿预定服务，使用Angular5构建。</dd>
-      </dl>
-    </div> -->
-
+           fxLayoutAlign="center center">
+    <div fxFlex="100"
+         fxLayout="row"
+         fxLayout.xs="column"
+         fxLayoutAlign="center center">
+      <img appElementSrc="rental-logo.svg">
+      <div fxFlex="3" fxFlex.xs="10"></div>
+      <div class="title" ngClass="mat-display-1" ngClass.xs="mat-h1">大乐之野 绿山墙</div>
     </div>
+    <button mat-fab><mat-icon>menu</mat-icon></button>
   </section>
   <section class="rental-general"
-           fxFlexOrder="2">
-           <!-- fxLayout="row"
+           fxFlexOrder="2"
+           fxLayout="row"
            fxLayout.xs="column"
-           fxLayoutAlign="space-around center"> -->
-      <!-- Carousel -->
-    <div class="swiper-container">
+           fxLayoutAlign="space-between center">
+    <div fxFlex>
+      <h1>遗失的美好境地</h1>
+      <p>大乐之野由马科团队设计，其拥有超过5年的民宿经营经验，打造更舒适的民宿。</p>
+      <button mat-raised-button color="accent" routerLink="rooms">现在预定</button>
+    </div>
+    <div fxFlex="10"></div>
+    <div class="swiper-container" fxFlex="60">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img appElementSrc="rental-general-1.jpg" alt="">
+          <img appElementSrc="detail-slider-1.jpg" alt="">
         </div>
         <div class="swiper-slide">
-          <img appElementSrc="rental-general-2.jpg" alt="">
+          <img appElementSrc="detail-slider-2.jpg" alt="">
         </div>
         <div class="swiper-slide">
-          <img appElementSrc="rental-general-3.jpg" alt="">
+          <img appElementSrc="detail-slider-3.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img appElementSrc="detail-slider-4.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img appElementSrc="detail-slider-5.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img appElementSrc="detail-slider-6.jpg" alt="">
         </div>
       </div>
-      <!-- Add Pagination -->
       <div class="swiper-pagination"></div>
     </div>
-    <!-- <div fxFlex="35%">
-      <dl>
-        <dt>General Page</dt>
-        <dd>There should be description of rental.</dd>
-      </dl>
-    </div> -->
   </section>
   <section class="rental-show"
            fxFlexOrder="3">
@@ -67,10 +69,4 @@
       </dd>
     </dl>
   </section>
-</div>
-
-<div class="fab-wrapper">
-  <button mat-fab (click)="onSectionDown()">
-    <mat-icon>arrow_downward</mat-icon>
-  </button>
 </div>
