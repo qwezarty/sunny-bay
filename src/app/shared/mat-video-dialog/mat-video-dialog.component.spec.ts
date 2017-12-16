@@ -44,7 +44,7 @@ describe('MatVideoDialog', () => {
         expect(component).toBeTruthy();
     });
 
-    it('should open a dialog with video tag', () => {
+    it('should open a dialog', () => {
         component.onWatchVideo();
         fixture.detectChanges();
         dialogContainer = overlayContainerElement.querySelector('mat-dialog-container') as HTMLElement;
