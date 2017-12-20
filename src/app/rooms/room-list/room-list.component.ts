@@ -53,12 +53,7 @@ export class RoomListComponent implements OnInit, OnDestroy {
     ]).subscribe(result => {
       if (result.matches) {
         this.activateSmallLayout();
-      }
-    });
-    this.breakpointService.observe([
-      '(min-width: 1025px)'
-    ]).subscribe(result => {
-      if (result.matches) {
+      } else {
         this.activateLargeLayout();
       }
     });
