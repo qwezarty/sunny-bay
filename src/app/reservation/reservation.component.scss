@@ -1,28 +1,55 @@
 @import '~variables.scss';
 
-section {
-    margin: 0;
-    padding: 25px;
-}
-.rental {
-    background: lightblue;
-    padding-top: 20px;
-    margin-bottom: 25px;
+.room {
+    margin: 24px 12px 24px 24px;
     img {
         width: 100%;
         height: 100%;
-        width: $unit-desktop-one-increment;
-        height: $unit-desktop-one-increment;
+        object-fit: cover;
+        object-position: center;
+    }
+    .room-desc {
+        padding: 16px 24px 16px 24px;
     }
 }
-.control {
-    padding-left: 0;
+.room-lt-md {
+    margin: 24px 24px 12px 24px;
+}
+.controls {
+    margin: 24px 24px 24px 12px;
+}
+.controls-lt-md {
+    margin: 12px 24px 24px 24px;
+}
+.rental {
+    padding: 16px;
+    background: lightblue;
+    img {
+        width: 48px;
+        height: 48px;
+    }
+    .title {
+        margin: 0;
+    }
 }
 form {
-    padding: 25px;
+    font-size: 1.1rem;
+    padding: 24px;
     .control-container {
         input {
             width: 100%;
         }
     }
+}
+.proceed {
+    width: 72px;
+    height: 72px;
+    .proceed-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 36px;
+    }
+}
+.costs {
+    margin: 0;
 }

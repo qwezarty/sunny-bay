@@ -1,30 +1,21 @@
-<div class="reservation-container" fxLayout="row" fxLayout.xs="column">
-  <section class="check" fxFlex="1 1 40" fxLayout="column">
-    <div class="rental mat-elevation-z2" fxFlex="50" fxLayout="column" fxLayoutAlign="space-bwtween center">
-      <img appElementSrc="rental-logo.svg">
-      <div fxFlex="3" fxFlex.xs="10"></div>
-      <div class="title" ngClass="mat-h1">大乐之野 绿山墙</div>
+<div class="reservation-container" fxLayout="row" fxLayout.lt-md="column">
+  <section class="room mat-elevation-z2" ngClass.lt-md="room-lt-md" fxFlex="45" fxFlex.lt-md="30" fxLayout="column">
+    <div fxFlex>
+      <img [appElementSrc]="content.img">
     </div>
-    <div class="room" fxFlex>
-      <mat-card>
-        <img mat-card-image [appElementSrc]="content.img">
-        <mat-card-title>{{ content.title }}</mat-card-title>
-        <!-- <mat-card-subtitle>{{ content.price | currency:'CNY':'symbol-narrow':'1.0' }}</mat-card-subtitle> -->
-        <mat-card-content>
-          <p>单价：{{ content.price | currency:'CNY':'symbol-narrow':'1.0' }} / 晚</p>
-          <p>入住日期：{{ inDate.toLocaleDateString() | date }}</p>
-          <p *ngIf="outDate? true : false">离店日期：{{ outDate.toLocaleDateString() | date }}</p>
-          <p *ngIf="(inDate && outDate)? true : false">共计：{{ caculateTotalNights() }} 晚</p>
-          <p *ngIf="(inDate && outDate)? true : false">总计金额：{{ caculateTotalCosts() | currency:'CNY':'symbol-narrow':'1.0'}}</p>
-          <p *ngIf="contact.name">联系人姓名：{{ contact.name }}</p>
-          <p *ngIf="contact.phone">联系人电话：{{ contact.phone }}</p>
-        </mat-card-content>
-      </mat-card>
+    <div class="room-desc">
+      <h1>{{ content.title }}</h1>
+      <p>{{ content.price | currency:'CNY':'symbol-narrow':'1.0' }}</p>
     </div>
   </section>
 
-  <section class="control" fxFlex="2 2 60" fxLayout>
-    <form class="mat-elevation-z2" fxFlex="100">
+  <section class="controls mat-elevation-z2" ngClass.lt-md="controls-lt-md" fxFlex>
+    <div class="rental" fxLayout="column" fxLayout.lt-md="row" fxLayoutAlign="space-bwtween center" fxLayoutAlign.lt-md="center center">
+      <img appElementSrc="rental-logo.svg">
+      <div fxFlex="3"></div>
+      <div class="title" ngClass="mat-h1">大乐之野 绿山墙</div>
+    </div>
+    <form>
       <div class="control-container" fxLayout fxLayoutAlign="space-between center">
         <mat-icon>date_range</mat-icon>
         <div fxFlex="3"></div>
@@ -59,6 +50,25 @@
           <mat-datepicker touchUi="true" #outPicker></mat-datepicker>
         </mat-form-field>
       </div>
+
+      <div class="control-container" fxLayout fxLayoutAlign="start center">
+        <mat-icon>people</mat-icon>
+        <div fxFlex="3"></div>
+        <mat-form-field fxFlex="42">
+          <mat-select placeholder="成人" name="adults" [(ngModel)]="adults">
+            <mat-option value=1>1</mat-option>
+            <mat-option value=2>2</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div fxFlex></div>
+        <mat-form-field fxFlex="42">
+          <mat-select placeholder="儿童" name="childs" [(ngModel)]="childs">
+            <mat-option value=1>1</mat-option>
+            <mat-option value=2>2</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
       <div class="control-container" fxLayout fxLayoutAlign="space-between center">
         <mat-icon>person</mat-icon>
         <div fxFlex="3"></div>
@@ -73,6 +83,15 @@
           <input matInput type="tel" placeholder="联系人手机" name="phone" [(ngModel)]="contact.phone">
         </mat-form-field>
       </div>
+
+      <div fxLayout fxLayoutAlign="end center">
+        <h1 class="costs">{{ caculateTotalCosts() | currency:'CNY':'symbol-narrow':'1.0' }}</h1>
+        <div fxFlex="6"></div>
+        <button mat-fab class="proceed">
+          <mat-icon class="proceed-icon">arrow_forward</mat-icon>
+        </button>
+      </div>
+
     </form>
   </section>
 </div>

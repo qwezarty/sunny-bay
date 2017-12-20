@@ -5,9 +5,10 @@ import { ReservationRoutingModule } from './reservation-routing.module';
 import { ReservationComponent } from './reservation.component';
 import { SharedModule } from '../shared/shared.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatCardModule,
+import { MatButtonModule,
          MatFormFieldModule,
          MatInputModule,
+         MatSelectModule,
          MatDatepickerModule,
          MatNativeDateModule,
          MatIconModule,
@@ -21,9 +22,10 @@ import { MatCardModule,
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    MatCardModule,
+    MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatIconModule,

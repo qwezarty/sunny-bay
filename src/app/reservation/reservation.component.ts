@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-reservation',
@@ -46,17 +47,49 @@ export class ReservationComponent implements OnInit {
   outMaxDate: Date;
   outDateControl = new FormControl();
 
-  constructor() { }
+  constructor(
+    private render: Renderer2,
+    private elementRef: ElementRef,
+    private breakpointService: BreakpointObserver,
+  ) { }
 
   ngOnInit() {
+    this.observeDevice();
   }
 
-  private caculateOutMaxDate(inDate: Date): Date {
+  observeDevice() {
+    // this.breakpointService.observe([
+    //   Breakpoints.Web
+    // ]).subscribe(result => {
+    //   if (result.matches) {
+    //     this.activateLargeLayout();
+    //   }
+    // });
+    this.breakpointService.observe([
+      '(max-width:959px)'
+    ]).subscribe(result => {
+      if (result.matches) {
+        this.activateSmallLayout();
+      } else {
+        this.activateLargeLayout();
+      }
+    });
+  }
+
+  activateSmallLayout() {
+    this.render.removeClass(this.elementRef.nativeElement, 'expand-outlet-to-full-vh');
+  }
+
+  activateLargeLayout() {
+    this.render.addClass(this.elementRef.nativeElement, 'expand-outlet-to-full-vh');
+  }
+
+  caculateOutMaxDate(inDate: Date): Date {
     // todo logic: set max reservation duration, say, 10 days
     return this.cloneDateAndAddDays(inDate, 10);
   }
 
-  private caculateOutMinDate(inDate: Date): Date {
+  caculateOutMinDate(inDate: Date): Date {
     // todo logic: set max reservation duration, say, 10 days
     return this.cloneDateAndAddDays(inDate, 1);
   }

@@ -69,6 +69,13 @@ body {
 {
     background: hsla(0, 0%, 53.3%, .4)
 }
+// used for expanding elements 
+// which is the root of router-outlet to full view height
+.expand-outlet-to-full-vh {
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: row;
+}
 
 
 // swiper.js
