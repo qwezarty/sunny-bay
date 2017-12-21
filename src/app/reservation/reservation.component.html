@@ -24,10 +24,10 @@
                  matInput
                  [matDatepicker]="inPicker"
                  [formControl]="inDateControl"
-                 [min]="inMinDate"
-                 [max]="inMaxDate"
+                 [min]="form.inMinDate"
+                 [max]="form.inMaxDate"
                  name="inDate"
-                 [(ngModel)]="inDate"
+                 [(ngModel)]="form.inDate"
                  placeholder="入住日期"
                  (click)="inPicker.open()">
           <mat-datepicker touchUi="true" #inPicker></mat-datepicker>
@@ -41,10 +41,10 @@
                  matInput
                  [matDatepicker]="outPicker"
                  [formControl]="outDateControl"
-                 [min]="outMinDate"
-                 [max]="outMaxDate"
+                 [min]="form.outMinDate"
+                 [max]="form.outMaxDate"
                  name="outDate"
-                 [(ngModel)]="outDate"
+                 [(ngModel)]="form.outDate"
                  placeholder="离开日期"
                  (click)="outPicker.open()">
           <mat-datepicker touchUi="true" #outPicker></mat-datepicker>
@@ -55,14 +55,14 @@
         <mat-icon>people</mat-icon>
         <div fxFlex="3"></div>
         <mat-form-field fxFlex="42">
-          <mat-select placeholder="成人" name="adults" [(ngModel)]="adults">
+          <mat-select placeholder="成人" name="adults" [(ngModel)]="form.adults">
             <mat-option value=1>1</mat-option>
             <mat-option value=2>2</mat-option>
           </mat-select>
         </mat-form-field>
         <div fxFlex></div>
         <mat-form-field fxFlex="42">
-          <mat-select placeholder="儿童" name="childs" [(ngModel)]="childs">
+          <mat-select placeholder="儿童" name="childs" [(ngModel)]="form.childs">
             <mat-option value=1>1</mat-option>
             <mat-option value=2>2</mat-option>
           </mat-select>
@@ -73,21 +73,21 @@
         <mat-icon>person</mat-icon>
         <div fxFlex="3"></div>
         <mat-form-field fxFlex>
-          <input matInput type="text" placeholder="联系人姓名" name="name" [(ngModel)]="contact.name">
+          <input matInput type="text" placeholder="联系人姓名" name="name" [(ngModel)]="form.name">
         </mat-form-field>
       </div>
       <div class="control-container" fxLayout fxLayoutAlign="space-between center">
         <mat-icon>phone</mat-icon>
         <div fxFlex="3"></div>
         <mat-form-field fxFlex>
-          <input matInput type="tel" placeholder="联系人手机" name="phone" [(ngModel)]="contact.phone">
+          <input matInput type="tel" placeholder="联系人手机" name="phone" [(ngModel)]="form.phone">
         </mat-form-field>
       </div>
 
       <div fxLayout fxLayoutAlign="end center">
-        <h1 class="costs">{{ caculateTotalCosts() | currency:'CNY':'symbol-narrow':'1.0' }}</h1>
+        <h1 class="costs">{{ form.costs | currency:'CNY':'symbol-narrow':'1.0' }}</h1>
         <div fxFlex="6"></div>
-        <button mat-fab class="proceed">
+        <button mat-fab class="proceed" (click)="onProceed()">
           <mat-icon class="proceed-icon">arrow_forward</mat-icon>
         </button>
       </div>

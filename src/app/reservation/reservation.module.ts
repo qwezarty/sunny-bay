@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReservationRoutingModule } from './reservation-routing.module';
-import { ReservationComponent } from './reservation.component';
+import { ReservationComponent, ReservationDialogComponent } from './reservation.component';
 import { SharedModule } from '../shared/shared.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule,
@@ -12,6 +12,7 @@ import { MatButtonModule,
          MatDatepickerModule,
          MatNativeDateModule,
          MatIconModule,
+         MatDialogModule,
         } from '@angular/material';
 
 @NgModule({
@@ -29,7 +30,9 @@ import { MatButtonModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatIconModule,
+    MatDialogModule,
   ],
-  declarations: [ReservationComponent]
+  entryComponents: [ReservationDialogComponent],
+  declarations: [ReservationComponent, ReservationDialogComponent],
 })
 export class ReservationModule { }

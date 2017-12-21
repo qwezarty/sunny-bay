@@ -1,6 +1,8 @@
-import { Component, OnInit, Renderer2, ElementRef } from '@angular/core';
+import { Component, OnInit, Renderer2, ElementRef, Inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material';
+import { ReservationFormModel } from './reservation-form.model';
 
 @Component({
   selector: 'app-reservation',
@@ -12,49 +14,22 @@ export class ReservationComponent implements OnInit {
     img: 'room-list-1.jpg', title: '木香山景房', price: 780,
     content: `大面积的落地窗设计，能让你时刻享受山里的美景。宽敞的阳台，足以让您铺设瑜伽垫。`
   };
-  contact: { 'name': string, 'phone': string } = { 'name': '', 'phone': '' };
+  form: ReservationFormModel;
 
-  // check-in date property
-  private _inDate: Date;
-  get inDate(): Date {
-    return this._inDate || new Date();
-  }
-  set inDate(date: Date) {
-    // when user pick an check-in date
-    // we should empty the check-out date
-    this.outDate = null;
-    this._inDate = date;
-    // we should also set the check-out min&max date
-    this.outMinDate = this.caculateOutMinDate(this._inDate);
-    this.outMaxDate = this.caculateOutMaxDate(this._inDate);
-  }
-  // check-in min&max date
-  inMinDate = new Date();
-  inMaxDate = this.cloneDateAndAddDays(this.inMinDate, 30);
   inDateControl = new FormControl();
 
-  // check-out date property
-  private _outDate: Date;
-  get outDate(): Date {
-    return this._outDate;
-  }
-  set outDate(date: Date) {
-    this._outDate = date;
-  }
-  // check-out min&max date
-  // this value will be initialized when check-in date be given
-  outMinDate: Date;
-  outMaxDate: Date;
   outDateControl = new FormControl();
 
   constructor(
     private render: Renderer2,
     private elementRef: ElementRef,
     private breakpointService: BreakpointObserver,
+    private dialog: MatDialog,
   ) { }
 
   ngOnInit() {
     this.observeDevice();
+    this.form = new ReservationFormModel(new Date(), this.content.price);
   }
 
   observeDevice() {
@@ -77,44 +52,20 @@ export class ReservationComponent implements OnInit {
     this.render.addClass(this.elementRef.nativeElement, 'expand-outlet-to-full-vh');
   }
 
-  caculateOutMaxDate(inDate: Date): Date {
-    // todo logic: set max reservation duration, say, 10 days
-    return this.cloneDateAndAddDays(inDate, 10);
+  onProceed() {
+    this.dialog.open(ReservationDialogComponent, {
+      data: this.form
+    });
   }
+}
 
-  caculateOutMinDate(inDate: Date): Date {
-    // todo logic: set max reservation duration, say, 10 days
-    return this.cloneDateAndAddDays(inDate, 1);
-  }
 
-  private caculateTotalNights(): number {
-    if (!(this.outDate && this.inDate)) {
-      return 0;
-    }
-    const diff = this.outDate.getTime() - this.inDate.getTime();
-    if (diff < 0) {
-      return 0;
-    }
-
-    return Math.ceil(diff / (1000 * 3600 * 24));
-  }
-
-  private caculateTotalCosts(): number {
-    // costs will not be negative
-    // in that nights will always beyond zero
-    const nights = this.caculateTotalNights();
-    return nights * this.content.price;
-  }
-
-  private cloneDateAndAddDays(date: Date, days: number): Date {
-    const copy = this.cloneDate(date);
-    copy.setDate(copy.getDate() + days);
-    return new Date(copy);
-  }
-
-  private cloneDate(origin: Date): Date {
-    const cooked = new Date(origin.getTime());
-    return cooked;
-  }
+@Component({
+  templateUrl: './reservation.dialog.html',
+  styleUrls: ['./reservation.dialog.scss']
+})
+export class ReservationDialogComponent {
+  // todo inject data with re-designed data structure
+  constructor(@Inject(MAT_DIALOG_DATA) public data: ReservationFormModel) {}
 
 }
