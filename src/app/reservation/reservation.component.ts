@@ -58,13 +58,6 @@ export class ReservationComponent implements OnInit {
   }
 
   observeDevice() {
-    // this.breakpointService.observe([
-    //   Breakpoints.Web
-    // ]).subscribe(result => {
-    //   if (result.matches) {
-    //     this.activateLargeLayout();
-    //   }
-    // });
     this.breakpointService.observe([
       '(max-width:959px)'
     ]).subscribe(result => {
@@ -95,12 +88,20 @@ export class ReservationComponent implements OnInit {
   }
 
   private caculateTotalNights(): number {
-    // todo add negative validation
+    if (!(this.outDate && this.inDate)) {
+      return 0;
+    }
     const diff = this.outDate.getTime() - this.inDate.getTime();
+    if (diff < 0) {
+      return 0;
+    }
+
     return Math.ceil(diff / (1000 * 3600 * 24));
   }
 
   private caculateTotalCosts(): number {
+    // costs will not be negative
+    // in that nights will always beyond zero
     const nights = this.caculateTotalNights();
     return nights * this.content.price;
   }
