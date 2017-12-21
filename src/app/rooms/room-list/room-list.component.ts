@@ -40,6 +40,7 @@ export class RoomListComponent implements OnInit, OnDestroy {
   ngOnInit() {
     const childrenElements = this.eleRef.nativeElement.parentElement.children;
     this.footerEleRef = childrenElements[childrenElements.length - 1];
+    this.removeGlobalFooter();
     this.observeDevice();
   }
 
@@ -49,7 +50,8 @@ export class RoomListComponent implements OnInit, OnDestroy {
 
   observeDevice() {
     this.breakpointService.observe([
-      '(max-width:1024px)'
+      // '(max-width:1024px)'
+      '(max-width:959px)'
     ]).subscribe(result => {
       if (result.matches) {
         this.activateSmallLayout();
@@ -62,13 +64,11 @@ export class RoomListComponent implements OnInit, OnDestroy {
   activateSmallLayout() {
     this.sidenav.mode = 'push';
     this.sidenav.opened = 'false';
-    this.removeGlobalFooter();
   }
 
   activateLargeLayout() {
     this.sidenav.mode = 'side';
     this.sidenav.opened = 'true';
-    this.removeGlobalFooter();
   }
 
   removeGlobalFooter() {
