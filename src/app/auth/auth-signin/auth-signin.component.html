@@ -1,0 +1,42 @@
+<div class="wrapper" fxLayout="column" fxLayoutAlign="center center">
+  <div class="container">
+    <div class="main mat-elevation-z2">
+      <div class="logo">日光海岸</div>
+      <h1>登录</h1>
+      <form>
+        <mat-form-field>
+            <input matInput type="text" placeholder="手机号或邮箱" name="account">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" placeholder="密码" name="account">
+        </mat-form-field>
+
+        <!-- <button mat-button [matMenuTriggerFor]="moreOptions">更多选项</button> -->
+        <div class="options" fxLayout="row" fxLayoutAlign="space-between center">
+          <a [matMenuTriggerFor]="options">更多选项</a>
+          <!-- <button mat-button [matMenuTriggerFor]="options" focus="false">更多选项</button> -->
+          <mat-menu #options="matMenu">
+            <button mat-menu-item class="menu-item">立刻创建账户</button>
+            <button mat-menu-item class="menu-item">忘记密码？</button>
+          </mat-menu>
+          <button mat-raised-button color="accent">登录</button>
+        </div>
+
+
+      </form>
+    </div>
+    <div class="footer">
+      <ul>
+        <mat-icon svgIcon="wechat"></mat-icon>
+        <mat-icon svgIcon="weibo"></mat-icon>
+        <mat-icon svgIcon="qq"></mat-icon>
+      </ul>
+      <div fxFlex></div>
+      <ul>
+        <a routerLink="">首页</a>
+        <a routerLink="">条款</a>
+        <a routerLink="">帮助</a>
+      </ul>
+    </div>
+  </div>
+</div>

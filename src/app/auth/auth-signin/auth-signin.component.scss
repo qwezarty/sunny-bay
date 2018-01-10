@@ -1,0 +1,55 @@
+@import '~variables.scss';
+
+.wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.main {
+    width: 370px;
+    height: 420px;
+    padding: 40px;
+    form {
+        padding: 24px 0px 24px 0px;
+        mat-form-field {
+            width: 100%;
+        }
+    }
+    .options {
+        margin-top: 32px;
+        a {
+            color: #4285f4;
+            cursor: pointer;
+            font-size: 14px;
+            // &::before {
+            //     background: rgba(66,133,244,.26);
+            // }
+        }
+    }
+}
+.menu-item {
+    font-size: 14px;
+}
+.footer {
+    color: $color-footer;
+    padding-top: 24px;
+    font-size: 12px;
+    ul {
+        padding: 0px;
+        margin: 0px -16px 0px -16px;
+    }
+    a {
+        color: inherit;
+        padding: 0px 16px 0px 16px;
+        text-decoration: none;
+    }
+    mat-icon {
+        color: $color-footer;
+        height: 16px;
+        width: 16px;
+        padding: 0px 16px 0px 16px;
+    }
+
+}
