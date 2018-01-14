@@ -71,6 +71,7 @@ export class RoomListComponent implements OnInit, OnDestroy {
     this.sidenav.opened = 'true';
   }
 
+  // todo refactoring this shit
   removeGlobalFooter() {
     this.renderer.setAttribute(
       this.footerEleRef,
@@ -78,6 +79,7 @@ export class RoomListComponent implements OnInit, OnDestroy {
     );
   }
 
+  // todo refactoring this shit
   installGlobalFooter() {
     this.renderer.removeAttribute(
       this.footerEleRef,

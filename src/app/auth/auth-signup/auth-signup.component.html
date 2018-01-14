@@ -1,3 +1,35 @@
-<p>
-  auth-signup works!
-</p>
+<div class="wrapper" fxLayout fxLayoutAlign="center center">
+  <div fxFlex="8"></div>
+  <div class="container">
+    <div>
+      <img class="poster" appElementSrc="register-poster.jpg">
+    </div>
+    <h2>感受生活</h2>
+    <p>入住民宿，体验山里慢节奏的品质生活，开启一种新的生活方式。</p>
+  </div>
+  <div fxFlex="8"></div>
+  <div fxFlex="32" class="container">
+    <form>
+      <mat-form-field>
+          <input matInput type="text" placeholder="手机号或邮箱" name="account">
+      </mat-form-field>
+      <div class="code" fxLayout fxLayoutAlign="space-between center">
+        <mat-form-field fxFlex="50">
+            <input matInput type="text" placeholder="动态码" name="code">
+        </mat-form-field>
+        <button mat-button>获取动态码</button>
+      </div>
+      <mat-form-field>
+          <input matInput type="text" placeholder="设置密码" name="password">
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput type="text" placeholder="确认密码" name="confirm-password">
+      </mat-form-field>
+      <div fxLayout fxLayoutAlign="space-between center">
+        <button mat-raised-button color="accent">创 建</button>
+        <span>创建账户，意味着同意我们的<a href="#">协议</a></span>
+      </div>
+    </form>
+  </div>
+  <div fxFlex="8"></div>
+</div>
