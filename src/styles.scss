@@ -45,7 +45,7 @@ $custom-typography: mat-typography-config(
 }
 
 // component node stylesheet
-app-room-list {
+app-room-list, app-account {
     display: flex;
     flex-flow: column;
     flex: 1 1 100%;

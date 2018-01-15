@@ -32,11 +32,13 @@ export class AuthSignupComponent implements OnInit, OnDestroy {
     this.installGlobalHeaderAndFooter();
   }
 
+  // todo refactoring this shit
   removeGlobalHeaderAndFooter() {
     this.renderer.setAttribute(this.headerEleRef, 'hidden', '');
     this.renderer.setAttribute(this.footerEleRef, 'hidden', '');
   }
 
+  // todo refactoring this shit
   installGlobalHeaderAndFooter() {
     this.renderer.removeAttribute(this.headerEleRef, 'hidden', '');
     this.renderer.removeAttribute(this.footerEleRef, 'hidden', '');
