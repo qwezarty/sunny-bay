@@ -1,5 +1,10 @@
 @import '~variables.scss';
 
+#write {
+    overflow-y: scroll;
+    padding: 16px;
+}
+
 @media screen and (min-width: $media-desktop-min){
     #write {
         height: 500px;
@@ -10,8 +15,4 @@
     #write {
        height: 400px;
     }
-}
-
-#write {
-    height: 450px;
 }
