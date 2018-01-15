@@ -1,0 +1,17 @@
+@import '~variables.scss';
+
+@media screen and (min-width: $media-desktop-min){
+    #write {
+        height: 500px;
+    }
+}
+
+@media screen and (max-width: $media-tablet-max) and (min-width: $media-tablet-min){
+    #write {
+       height: 400px;
+    }
+}
+
+#write {
+    height: 450px;
+}

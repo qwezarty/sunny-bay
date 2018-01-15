@@ -6,14 +6,17 @@ import { MatInputModule,
          MatButtonModule,
          MatMenuModule,
          MatIconModule,
+         MatDialogModule,
        } from '@angular/material';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { AuthSigninComponent } from './auth-signin/auth-signin.component';
-import { AuthSignupComponent } from './auth-signup/auth-signup.component';
+import { AuthSignupComponent, AuthSignupDialogComponent } from './auth-signup/auth-signup.component';
 import { AuthSignoutComponent } from './auth-signout/auth-signout.component';
 import { SharedModule } from '../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { MediaMatcher } from '@angular/cdk/layout';
 
 @NgModule({
   imports: [
@@ -22,13 +25,21 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     FlexLayoutModule,
     MatInputModule,
     MatMenuModule,
     MatButtonModule,
     MatIconModule,
-    HttpClientModule,
+    MatDialogModule
   ],
-  declarations: [AuthSigninComponent, AuthSignupComponent, AuthSignoutComponent]
+  entryComponents: [AuthSignupDialogComponent],
+  declarations: [
+    AuthSigninComponent,
+    AuthSignupComponent,
+    AuthSignoutComponent,
+    AuthSignupDialogComponent,
+  ],
+  providers: [BreakpointObserver, MediaMatcher]
 })
 export class AuthModule { }
