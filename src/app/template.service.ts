@@ -1,24 +1,27 @@
 import { Template, LayoutType, HeaderType, FooterType, TemplateLayout } from './template.model';
+import { Subject } from 'rxjs/subject';
+import { Observable } from 'rxjs/Observable';
 
 export class TemplateService {
+    private currentTemplate = new Subject<Template>();
     private templates: Template[] = [
         // root route
-        { name: 'home', layout: new TemplateLayout(LayoutType.Default) },
-        { name: 'rental', layout: new TemplateLayout(LayoutType.Default) },
+        new Template('home', new TemplateLayout(LayoutType.Default)),
+        new Template('rental', new TemplateLayout(LayoutType.Default)),
         // room-list and room-detail
-        { name: 'rooms', layout: new TemplateLayout(LayoutType.SideNav) },
-        { name: 'room', layout: new TemplateLayout(LayoutType.Default) },
+        new Template('rooms', new TemplateLayout(LayoutType.SideNav)),
+        new Template('room', new TemplateLayout(LayoutType.Default)),
         // authorization
-        { name: 'signin', layout: new TemplateLayout(LayoutType.None) },
-        { name: 'signup', layout: new TemplateLayout(LayoutType.None) },
-        { name: 'contract', layout: new TemplateLayout(LayoutType.None) },
+        new Template('signin', new TemplateLayout(LayoutType.None)),
+        new Template('signup', new TemplateLayout(LayoutType.None)),
+        new Template('contract', new TemplateLayout(LayoutType.None)),
         // account
-        { name: 'account', layout: new TemplateLayout(LayoutType.SideNav) },
+        new Template('account', new TemplateLayout(LayoutType.SideNav)),
     ];
-    private defaultTemplate: Template = {
-        name: 'default_template',
-        layout: new TemplateLayout(LayoutType.Default)
-    };
+    private defaultTemplate: Template = new Template(
+        'default_template',
+        new TemplateLayout(LayoutType.None)
+    );
 
     public findTemplateOrDefault(name: string) {
         const templates = this.templates.filter(element => {
@@ -33,4 +36,15 @@ export class TemplateService {
         }
     }
 
+    public nextTemplate(template: Template) {
+        return this.currentTemplate.next(template);
+    }
+
+    public getTemplate(): Observable<Template> {
+        return this.currentTemplate.asObservable();
+    }
+
+    public removeTemplate() {
+        return this.currentTemplate.next();
+    }
 }

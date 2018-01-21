@@ -1,6 +1,19 @@
 export class Template {
     name: string;
-    layout: TemplateLayout;
+    private _layout: TemplateLayout;
+    set layout(layout: TemplateLayout) {
+        this._layout = layout;
+    }
+    get layout() {
+        if (!this._layout) {
+            this._layout = new TemplateLayout(LayoutType.None);
+        }
+        return this._layout;
+    }
+    constructor(name: string, layout?: TemplateLayout) {
+        this.name = name;
+        this.layout = layout;
+    }
 }
 
 export class TemplateLayout {

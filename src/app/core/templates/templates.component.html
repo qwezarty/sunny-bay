@@ -1,5 +1,5 @@
 <app-header *ngIf="isShowingHeader()"></app-header>
-<div id="templates-outlet" [ngSwitch]="templateLayout.type">
+<div id="templates-outlet" [ngSwitch]="template.layout.type">
     <app-template-default class="template" *ngSwitchCase="0" fxLayout="column"></app-template-default>
     <app-template-sidenav class="template" *ngSwitchCase="1"></app-template-sidenav>
     <app-template-none class="template" *ngSwitchCase="2"></app-template-none>

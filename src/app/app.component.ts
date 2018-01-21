@@ -19,34 +19,25 @@ import { isNullOrUndefined } from 'util';
 })
 export class AppComponent implements OnInit {
   title = 'sunny-bay';
-  templateName = '';
-  templateLayout: TemplateLayout;
+  template: Template = this.templateService.findTemplateOrDefault(null);
 
   constructor(
     private router: Router,
     private templateService: TemplateService,
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
-    this.templateLayout = new TemplateLayout(LayoutType.None);
     this.router.events.subscribe((event) => {
       if (event instanceof ResolveStart) {
-        // we have clean the template at templates.component.ts
-        // const node = document.getElementById('templates-outlet');
-        // while (node.firstChild) {
-        //   node.removeChild(node.firstChild);
-        // }
-
         const templateName = this.findLastRouterData(event.state.root);
-        console.log('router gets template name:');
-        console.log(templateName);
+        // console.log('router gets template name:');
+        // console.log(templateName);
 
         const result = this.templateService.findTemplateOrDefault(templateName);
-        this.templateName = result.name;
-        this.templateLayout = result.layout;
-        console.log('trying to render template:');
-        console.log(this.templateName);
+        this.templateService.nextTemplate(result);
+        this.template = result;
+        // console.log('trying to render template:');
+        // console.log(this.template.name);
       }
     });
 
