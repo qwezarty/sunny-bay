@@ -1,24 +1,22 @@
 <ng-template #sideMainTemplate>
-  <!-- todo dispose mat-card tag. Refering to profile page. -->
-  <mat-card fxFlex="100%" fxLayout="column" fxLayoutAlign="space-between space-between">
-    <mat-card-header>
-      <img mat-card-avatar appElementSrc="rental-logo.svg">
-      <mat-card-title>绿山墙</mat-card-title>
-      <mat-card-subtitle>大乐之野</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content fxFlex>
-        <div *ngFor="let filterOption of filterOptions">
-          <mat-slide-toggle
-            class="slider"
-            color="accent"
-            [checked]="filterOption.checked"
-            [disabled]="filterOption.disabled"
-            (change)="onToggleChange(filterOption)">
-            {{ filterOption.content }}
-            </mat-slide-toggle>
-        </div>
-    </mat-card-content>
-  </mat-card>
+  <div class="rental" fxLayout fxLayoutAlign="start center">
+    <img mat-card-avatar appElementSrc="rental-logo.svg">
+    <h1>绿山墙</h1>
+  </div>
+  <div class="options">
+    <ul>
+      <li *ngFor="let filterOption of filterOptions">
+        <mat-slide-toggle
+          class="slider"
+          color="accent"
+          [checked]="filterOption.checked"
+          [disabled]="filterOption.disabled"
+          (change)="onToggleChange(filterOption)">
+          {{ filterOption.content }}
+          </mat-slide-toggle>
+      </li>
+    </ul>
+  </div>
 </ng-template>
 
 <div

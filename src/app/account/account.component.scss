@@ -1,13 +1,5 @@
 @import '~variables.scss';
 
-mat-sidenav-container {
-    flex: 1 1 100%;
-}
-mat-sidenav {
-    width: 5 * $unit-desktop-one-increment;
-    height: 100%;
-    padding: 24px;
-}
 .account {
     mat-icon {
         color: gray;

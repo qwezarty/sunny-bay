@@ -1,11 +1,33 @@
 @import '~@angular/material/theming';
 @import '~variables.scss';
 
-mat-card-content {
-    overflow-y: auto;
-    .slider {
-        padding-top: $unit-desktop-space-between-content-areas;
-        padding-bottom: $unit-desktop-space-between-content-areas;
+.rental {
+    img {
+        color: gray;
+        width: 56px;
+        height: 56px;
+    }
+    h1 {
+        margin: 0 0 0 16px;
+    }
+}
+.options {
+    ul {
+        list-style: none;
+        padding: 0;
+        padding-left: 8px;
+        li {
+            cursor: pointer;
+            padding-top: $unit-desktop-space-between-content-areas;
+            padding-bottom: $unit-desktop-space-between-content-areas;
+            mat-icon {
+                margin-right: 16px;
+                color: gray;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
     }
 }
 
