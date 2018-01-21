@@ -7,13 +7,14 @@ import { OrdersComponent } from './orders/orders.component';
 import { OccupanciesComponent } from './occupancies/occupancies.component';
 
 const routes: Routes = [
-    { path: '', component: AccountComponent,
-      children: [
-        { path: 'profile', component: ProfileComponent },
-        { path: 'orders', component: OrdersComponent },
-        { path: 'occupancies', component: OccupanciesComponent },
-      ]
-    }
+  {
+    path: '', component: AccountComponent, data: { 'template': 'account' },
+    children: [
+      { path: 'profile', component: ProfileComponent },
+      { path: 'orders', component: OrdersComponent },
+      { path: 'occupancies', component: OccupanciesComponent },
+    ]
+  }
 ];
 
 @NgModule({

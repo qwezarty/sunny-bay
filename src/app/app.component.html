@@ -1,7 +1,8 @@
 <div class="main mat-app-background mat-typography" fxLayout="column">
-    <app-header></app-header>
-    <router-outlet></router-outlet>
+    <!-- <app-header></app-header> -->
+    <!-- <router-outlet></router-outlet> -->
     <!-- keep this footer as last element inside div
     or it will get error in room-list page! -->
-    <app-footer></app-footer>
+    <!-- <app-footer></app-footer> -->
+    <app-templates [(templateLayout)]="templateLayout" #templatesElement></app-templates>
 </div>

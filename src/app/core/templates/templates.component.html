@@ -1,0 +1,8 @@
+<app-header *ngIf="isShowingHeader()"></app-header>
+<div id="templates-outlet" [ngSwitch]="templateLayout.type">
+    <app-template-default class="template" *ngSwitchCase="0" fxLayout="column"></app-template-default>
+    <app-template-sidenav class="template" *ngSwitchCase="1"></app-template-sidenav>
+    <app-template-none class="template" *ngSwitchCase="2"></app-template-none>
+    <div *ngSwitchDefault>no template matching</div>
+</div>
+<app-footer *ngIf="isShowingFooter()"></app-footer>

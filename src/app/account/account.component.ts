@@ -1,78 +1,28 @@
-import { Component, OnInit, OnDestroy, Renderer2, ElementRef } from '@angular/core';
-import { BreakpointObserver } from '@angular/cdk/layout';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Globals } from '../../global';
+import { TemplateSidenavService } from '../core/templates/template-sidenav/template-sidenav.service';
 
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.scss']
 })
-export class AccountComponent implements OnInit, OnDestroy {
-  footerEleRef: ElementRef;
-  sidenav: { 'mode': string, 'opened': string } = { 'mode': 'side', 'opened': 'true' };
+export class AccountComponent implements OnInit {
+  @ViewChild('sideMainTemplate') sideMainTemplate: TemplateRef<any>;
 
   constructor(
-    private breakpointService: BreakpointObserver,
-    private renderer: Renderer2, private eleRef: ElementRef,
     private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer,
-    private globals: Globals) {
-      iconRegistry.addSvgIcon(
-        'account', sanitizer.bypassSecurityTrustResourceUrl(
-          globals.Envs.HTML_IMAGE_SRC + 'ic_account_circle_none_56px.svg'
-        )
-      );
+    private globals: Globals, private sidenavService: TemplateSidenavService) {
   }
 
   ngOnInit() {
-    const childrenElements = this.eleRef.nativeElement.parentElement.children;
-    this.footerEleRef = childrenElements[childrenElements.length - 1];
-    this.removeGlobalFooter();
-    this.observeDevice();
-  }
-
-  ngOnDestroy() {
-    this.installGlobalFooter();
-  }
-
-  // todo refactoring this shit
-  removeGlobalFooter() {
-    this.renderer.setAttribute(
-      this.footerEleRef,
-      'hidden', ''
+    this.iconRegistry.addSvgIcon(
+      'account', this.sanitizer.bypassSecurityTrustResourceUrl(
+        this.globals.Envs.HTML_IMAGE_SRC + 'ic_account_circle_none_56px.svg'
+      )
     );
+    this.sidenavService.addSidenav(this.sideMainTemplate);
   }
-
-  // todo refactoring this shit
-  installGlobalFooter() {
-    this.renderer.removeAttribute(
-      this.footerEleRef,
-      'hidden', ''
-    );
-  }
-
-  observeDevice() {
-    this.breakpointService.observe([
-      // '(max-width:1024px)'
-      '(max-width:959px)'
-    ]).subscribe(result => {
-      if (result.matches) {
-        this.activateSmallLayout();
-      } else {
-        this.activateLargeLayout();
-      }
-    });
-  }
-
-  activateSmallLayout() {
-    this.sidenav.mode = 'push';
-    this.sidenav.opened = 'false';
-  }
-
-  activateLargeLayout() {
-    this.sidenav.mode = 'side';
-    this.sidenav.opened = 'true';
-  }
-
 }

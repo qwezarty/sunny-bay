@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Globals } from '../../../global';
@@ -8,12 +8,8 @@ import { Globals } from '../../../global';
   templateUrl: './auth-signin.component.html',
   styleUrls: ['./auth-signin.component.scss']
 })
-export class AuthSigninComponent implements OnInit, OnDestroy {
-  headerEleRef: ElementRef;
-  footerEleRef: ElementRef;
-
+export class AuthSigninComponent implements OnInit {
   constructor(
-    private eleRef: ElementRef, private renderer: Renderer2,
     private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer,
     private globals: Globals
   ) {
@@ -23,26 +19,6 @@ export class AuthSigninComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    const childrenElements = this.eleRef.nativeElement.parentElement.children;
-    this.headerEleRef = childrenElements[0];
-    this.footerEleRef = childrenElements[childrenElements.length - 1];
-    this.removeGlobalHeaderAndFooter();
-  }
-
-  ngOnDestroy() {
-    this.installGlobalHeaderAndFooter();
-  }
-
-  // todo refactoring this shit
-  removeGlobalHeaderAndFooter() {
-    this.renderer.setAttribute(this.headerEleRef, 'hidden', '');
-    this.renderer.setAttribute(this.footerEleRef, 'hidden', '');
-  }
-
-  // todo refactoring this shit
-  installGlobalHeaderAndFooter() {
-    this.renderer.removeAttribute(this.headerEleRef, 'hidden', '');
-    this.renderer.removeAttribute(this.footerEleRef, 'hidden', '');
   }
 
 }

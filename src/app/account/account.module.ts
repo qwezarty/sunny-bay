@@ -17,6 +17,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { ProfileComponent } from './profile/profile.component';
 import { OrdersComponent } from './orders/orders.component';
 import { OccupanciesComponent } from './occupancies/occupancies.component';
+import { TemplateSidenavService } from '../core/templates/template-sidenav/template-sidenav.service';
 
 @NgModule({
   imports: [
