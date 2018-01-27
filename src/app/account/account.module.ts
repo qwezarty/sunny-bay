@@ -4,17 +4,22 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProfileRoutingModule } from './account-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 import {
   MatSidenavModule,
   MatCardModule,
   MatIconModule,
   MatButtonModule,
+  MatFormFieldModule,
+  MatDialogModule,
+  MatInputModule,
+  MatSelectModule
 } from '@angular/material';
 
 import { AccountComponent } from './account.component';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent, ProfileDialogComponent } from './profile/profile.component';
 import { OrdersComponent } from './orders/orders.component';
 import { OccupanciesComponent } from './occupancies/occupancies.component';
 
@@ -25,17 +30,24 @@ import { OccupanciesComponent } from './occupancies/occupancies.component';
     HttpClientModule,
     FlexLayoutModule,
     SharedModule,
+    FormsModule,
     MatSidenavModule,
     MatCardModule,
     MatIconModule,
     MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatSelectModule,
   ],
   declarations: [
     AccountComponent,
     ProfileComponent,
+    ProfileDialogComponent,
     OccupanciesComponent,
-    OrdersComponent
+    OrdersComponent,
   ],
+  entryComponents: [ProfileDialogComponent],
   providers: [BreakpointObserver, MediaMatcher]
 })
 export class AccountModule { }

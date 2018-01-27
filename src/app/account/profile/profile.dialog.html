@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>更改{{ data.name }}</h2>
+<mat-dialog-content>
+    <mat-form-field *ngIf="showInput">
+        <input matInput type="text" [(ngModel)]="data.value">
+    </mat-form-field>
+    <mat-form-field *ngIf="showBirth">
+        <input matInput type="text" [(ngModel)]="data.value">
+        <p>birth</p>
+    </mat-form-field>
+    <mat-form-field *ngIf="showGender">
+        <mat-select [compareWith]="compareGender" [(ngModel)]="data.value">
+            <mat-option *ngFor="let gender of genderOptions" [value]="gender.value">{{ gender.desc }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="data" >确定</button>
+    <button mat-button mat-dialog-close>取消</button>
+</mat-dialog-actions>

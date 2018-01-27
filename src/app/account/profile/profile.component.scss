@@ -1,0 +1,15 @@
+.control-wrapper {
+    width: 100%;
+    height: 100%;
+}
+.control-container {
+    padding: 24px;
+}
+// add border
+.control-container ~ .control-container{
+    border-top: 1px solid rgba(0,0,0,0.12);
+}
+
+.edit {
+    cursor: pointer;
+}
