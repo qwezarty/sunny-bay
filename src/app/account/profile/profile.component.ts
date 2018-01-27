@@ -58,7 +58,7 @@ export class ProfileDialogComponent {
     { 'value': '保密', 'desc': '保密'},
   ]
   constructor(private dialogRef: MatDialogRef<ProfileDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) private data: any) {
+    @Inject(MAT_DIALOG_DATA) public data: any) {
     switch (data.type) {
       case 'gender':
         this.showGender = true;
