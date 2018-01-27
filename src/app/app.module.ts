@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
 import { Globals } from '../global';
+import { CoreService } from './core/core.service';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { Globals } from '../global';
   ],
   providers: [
     Globals,
+    CoreService,
     { provide: LOCALE_ID, useValue: 'zh-Hans' },
   ],
   bootstrap: [AppComponent]

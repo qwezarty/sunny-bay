@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ReservationFormModel } from './reservation-form.model';
+import { CoreService } from '../core/core.service';
 
 @Component({
   selector: 'app-reservation',
@@ -25,7 +26,10 @@ export class ReservationComponent implements OnInit {
     private elementRef: ElementRef,
     private breakpointService: BreakpointObserver,
     private dialog: MatDialog,
-  ) { }
+    private coreService: CoreService
+  ) { 
+    this.coreService.installAll();
+  }
 
   ngOnInit() {
     this.observeDevice();

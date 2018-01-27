@@ -1,7 +1,15 @@
 <div class="main mat-app-background mat-typography" fxLayout="column">
-    <app-header></app-header>
+    <ng-container *ngTemplateOutlet="header"></ng-container>
+    <ng-template #headerDefault>
+        <app-header></app-header>
+    </ng-template>
+
     <router-outlet></router-outlet>
     <!-- keep this footer as last element inside div
     or it will get error in room-list page! -->
-    <app-footer></app-footer>
+
+    <ng-container *ngTemplateOutlet="footer"></ng-container>
+    <ng-template #footerDefault>
+        <app-footer></app-footer>
+    </ng-template>
 </div>

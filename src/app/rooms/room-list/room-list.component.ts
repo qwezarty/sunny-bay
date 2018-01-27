@@ -1,15 +1,15 @@
-import { Component, OnInit, OnDestroy, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Observable } from 'rxjs/Observable';
+import { CoreService } from '../../core/core.service';
 
 @Component({
   selector: 'app-room-list',
   templateUrl: './room-list.component.html',
   styleUrls: ['./room-list.component.scss'],
 })
-export class RoomListComponent implements OnInit, OnDestroy {
-  footerEleRef: ElementRef;
+export class RoomListComponent implements OnInit {
   sidenav: { 'mode': string, 'opened': string } = { 'mode': 'side', 'opened': 'true' };
   filterOptions: { 'value': string, 'content': string, 'checked': boolean, 'disabled': boolean }[] = [
     { 'value': 'all', 'content': '显示全部', 'checked': true, 'disabled': false },
@@ -33,19 +33,14 @@ export class RoomListComponent implements OnInit, OnDestroy {
 
   constructor(
     private breakpointService: BreakpointObserver,
-    private renderer: Renderer2,
-    private eleRef: ElementRef) {
+    private coreService: CoreService
+  ) { 
+    this.coreService.installtHeader();
+    this.coreService.removeFooter();
   }
 
   ngOnInit() {
-    const childrenElements = this.eleRef.nativeElement.parentElement.children;
-    this.footerEleRef = childrenElements[childrenElements.length - 1];
-    this.removeGlobalFooter();
     this.observeDevice();
-  }
-
-  ngOnDestroy() {
-    this.installGlobalFooter();
   }
 
   observeDevice() {
@@ -69,22 +64,6 @@ export class RoomListComponent implements OnInit, OnDestroy {
   activateLargeLayout() {
     this.sidenav.mode = 'side';
     this.sidenav.opened = 'true';
-  }
-
-  // todo refactoring this shit
-  removeGlobalFooter() {
-    this.renderer.setAttribute(
-      this.footerEleRef,
-      'hidden', ''
-    );
-  }
-
-  // todo refactoring this shit
-  installGlobalFooter() {
-    this.renderer.removeAttribute(
-      this.footerEleRef,
-      'hidden', ''
-    );
   }
 
   onToggleChange(filterOption) {

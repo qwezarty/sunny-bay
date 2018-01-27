@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { MatVideoDialogComponent } from '../../shared/mat-video-dialog/mat-video-dialog.component';
 import { Globals } from '../../../global';
+import { CoreService } from '../../core/core.service';
 
 @Component({
   selector: 'app-room-detail',
@@ -9,7 +10,13 @@ import { Globals } from '../../../global';
   styleUrls: ['./room-detail.component.scss'],
 })
 export class RoomDetailComponent implements OnInit, AfterViewInit {
-  constructor(private videoDialog: MatDialog, private globals: Globals) { }
+  constructor(
+    private videoDialog: MatDialog,
+    private globals: Globals,
+    private coreService: CoreService,
+  ) { 
+    this.coreService.installAll();
+  }
 
   ngOnInit() {
   }

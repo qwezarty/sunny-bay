@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ThemeService } from '../shared/theme/theme.service';
+import { CoreService } from '../core/core.service';
 
 @Component({
   selector: 'app-rentals',
@@ -8,7 +9,12 @@ import { ThemeService } from '../shared/theme/theme.service';
 })
 export class RentalsComponent implements OnInit, AfterViewInit {
 
-  constructor(private themePicker: ThemeService) { }
+  constructor(
+    private themePicker: ThemeService,
+    private coreService: CoreService,
+  ) {
+    this.coreService.installAll();
+  }
 
   ngOnInit() {
   }
