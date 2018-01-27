@@ -5,9 +5,9 @@ import { RoomListComponent } from './room-list/room-list.component';
 import { RoomDetailComponent } from './room-detail/room-detail.component';
 
 const routes: Routes = [
-  { path: '', component: RoomListComponent, data: { 'template': 'rooms' } },
-  { path: ':id', component: RoomDetailComponent, data: { 'template': 'room' } },
-  { path: ':id/reservation', loadChildren: '../reservation/reservation.module#ReservationModule' }
+  { path: '', component: RoomListComponent },
+  { path: ':id', component: RoomDetailComponent },
+  { path: ':id/reservation', loadChildren: '../reservation/reservation.module#ReservationModule'}
 ];
 
 @NgModule({

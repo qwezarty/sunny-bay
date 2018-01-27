@@ -1,5 +1,10 @@
-<ng-template #sideMainTemplate>
-  <div fxLayout="column">
+<mat-sidenav-container>
+  <mat-sidenav
+    #sidenavElement
+    class="mat-elevation-z16"
+    [mode]="sidenav.mode"
+    [opened]="sidenav.opened"
+    fxLayout="column">
     <div class="account" fxLayout fxLayoutAlign="start center">
       <mat-icon svgIcon="account"></mat-icon>
       <h1>Roger-罗杰</h1>
@@ -11,7 +16,24 @@
         <li fxLayout fxLayoutAlign="start center" routerLink="occupancies"><mat-icon>people</mat-icon>入住人信息</li>
       </ul>
     </div>
-  </div>
-</ng-template>
+    <div class="footer">
+      <div class="nav">
+          <a routerLink="">Sunny Bay</a>
+          <a routerLink="">About</a>
+          <a routerLink="">Recruit</a>
+      </div>
+      <div class="policy">
+          <p>Powered by SunnyBay ©2017-2018. Code licensed under an GPLV3-style License.</p>
+      </div>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
-<router-outlet></router-outlet>
+<div class="fab-wrapper">
+    <button mat-fab (click)="sidenavElement.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+</div>

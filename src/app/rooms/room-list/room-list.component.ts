@@ -1,15 +1,16 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ElementRef, Renderer2 } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Observable } from 'rxjs/Observable';
-import { TemplateSidenavService } from '../../core/templates/template-sidenav/template-sidenav.service';
 
 @Component({
   selector: 'app-room-list',
   templateUrl: './room-list.component.html',
   styleUrls: ['./room-list.component.scss'],
 })
-export class RoomListComponent implements OnInit {
+export class RoomListComponent implements OnInit, OnDestroy {
+  footerEleRef: ElementRef;
+  sidenav: { 'mode': string, 'opened': string } = { 'mode': 'side', 'opened': 'true' };
   filterOptions: { 'value': string, 'content': string, 'checked': boolean, 'disabled': boolean }[] = [
     { 'value': 'all', 'content': '显示全部', 'checked': true, 'disabled': false },
     { 'value': '', 'content': '当季精选', 'checked': true, 'disabled': false },
@@ -29,12 +30,61 @@ export class RoomListComponent implements OnInit {
       content: `日式榻榻米房间，还附有小清新的阁楼，是整栋民宿视野最为宽广的地方。` },
   ];
   isChecked = false;
-  @ViewChild('sideMainTemplate') sideMainTemplate: TemplateRef<any>;
 
-  constructor(private sidenavService: TemplateSidenavService) { }
+  constructor(
+    private breakpointService: BreakpointObserver,
+    private renderer: Renderer2,
+    private eleRef: ElementRef) {
+  }
 
   ngOnInit() {
-    this.sidenavService.addSidenav(this.sideMainTemplate);
+    const childrenElements = this.eleRef.nativeElement.parentElement.children;
+    this.footerEleRef = childrenElements[childrenElements.length - 1];
+    this.removeGlobalFooter();
+    this.observeDevice();
+  }
+
+  ngOnDestroy() {
+    this.installGlobalFooter();
+  }
+
+  observeDevice() {
+    this.breakpointService.observe([
+      // '(max-width:1024px)'
+      '(max-width:959px)'
+    ]).subscribe(result => {
+      if (result.matches) {
+        this.activateSmallLayout();
+      } else {
+        this.activateLargeLayout();
+      }
+    });
+  }
+
+  activateSmallLayout() {
+    this.sidenav.mode = 'push';
+    this.sidenav.opened = 'false';
+  }
+
+  activateLargeLayout() {
+    this.sidenav.mode = 'side';
+    this.sidenav.opened = 'true';
+  }
+
+  // todo refactoring this shit
+  removeGlobalFooter() {
+    this.renderer.setAttribute(
+      this.footerEleRef,
+      'hidden', ''
+    );
+  }
+
+  // todo refactoring this shit
+  installGlobalFooter() {
+    this.renderer.removeAttribute(
+      this.footerEleRef,
+      'hidden', ''
+    );
   }
 
   onToggleChange(filterOption) {

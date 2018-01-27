@@ -7,8 +7,6 @@ import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
 import { Globals } from '../global';
-import { TemplateService } from './template.service';
-import { TemplateSidenavService } from './core/templates/template-sidenav/template-sidenav.service';
 
 @NgModule({
   declarations: [
@@ -23,8 +21,6 @@ import { TemplateSidenavService } from './core/templates/template-sidenav/templa
   ],
   providers: [
     Globals,
-    TemplateService,
-    TemplateSidenavService,
     { provide: LOCALE_ID, useValue: 'zh-Hans' },
   ],
   bootstrap: [AppComponent]

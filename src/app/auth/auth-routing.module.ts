@@ -10,9 +10,9 @@ import {
 } from './auth-signup/auth-signup.component';
 
 const routes: Routes = [
-  { path: 'signin', component: AuthSigninComponent, data: { 'template': 'signin' } },
-  { path: 'signup', component: AuthSignupComponent, data: { 'template': 'signup' } },
-  { path: 'signup/contract', component: AuthSignupDialogComponent, data: {'template': 'contract'} },
+  { path: 'signin', component: AuthSigninComponent },
+  { path: 'signup', component: AuthSignupComponent },
+  { path: 'signup/contract', component: AuthSignupDialogComponent },
   { path: 'signout', component: AuthSignoutComponent },
 ];
 

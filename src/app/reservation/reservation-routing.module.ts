@@ -4,7 +4,7 @@ import { ReservationComponent } from './reservation.component';
 
 
 const routes: Routes = [
-  { path: '', component: ReservationComponent, data: { 'template': 'reservation' } },
+  { path: '', component: ReservationComponent },
 ];
 
 @NgModule({
