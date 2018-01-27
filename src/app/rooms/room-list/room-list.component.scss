@@ -6,6 +6,9 @@ mat-sidenav {
     height: 100%;
     padding: 24px;
 }
+mat-sidenav-container {
+    flex: 1 1 100%;
+}
 
 .rental {
     img {
