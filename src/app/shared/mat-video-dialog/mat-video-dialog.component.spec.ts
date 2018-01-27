@@ -10,6 +10,7 @@ import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CoreService } from '../../core/core.service';
 
 describe('MatVideoDialog', () => {
     let fixture: ComponentFixture<TestMatVideoDialogComponent>;
@@ -27,7 +28,8 @@ describe('MatVideoDialog', () => {
                     provide: OverlayContainer, useFactory: () => {
                         overlayContainerElement = document.createElement('div');
                         return { getContainerElement: () => overlayContainerElement };
-                    }
+                    },
+                    CoreService
                 }
             ],
         })

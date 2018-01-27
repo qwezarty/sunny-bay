@@ -12,6 +12,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RoomsModule } from '../rooms.module';
 import { RoomListComponent } from './room-list.component';
 import { Globals } from '../../../global';
+import { CoreService } from '../../core/core.service';
 
 describe('RoomListComponent', () => {
   let component: RoomListComponent;
@@ -27,7 +28,8 @@ describe('RoomListComponent', () => {
         RouterTestingModule,
       ],
       providers: [
-        Globals
+        Globals,
+        CoreService
       ]
     })
       .compileComponents();

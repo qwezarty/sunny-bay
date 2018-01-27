@@ -8,6 +8,7 @@ import { By } from '@angular/platform-browser';
 import { Component, DebugElement } from '@angular/core';
 import { ElementSrcDirective } from './element-src.directive';
 import { Globals } from '../../../global';
+import { CoreService } from '../../core/core.service';
 
 describe('ElementSrcDirective', () => {
     let fixture: ComponentFixture<TestElementSrcComponent>;
@@ -23,7 +24,8 @@ describe('ElementSrcDirective', () => {
                 TestElementSrcComponent,
             ],
             providers: [
-                Globals
+                Globals,
+                CoreService
             ]
         })
         .compileComponents();
