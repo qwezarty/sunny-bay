@@ -1,3 +1,22 @@
-<p>
-  orders works!
-</p>
+<div class="wrapper" fxLayout="column" fxLayoutAlign="start stretch">
+    <div class="container mat-elevation-z2" *ngFor="let order of orders" fxLayout>
+        <div fxFlex class="img-wrapper"><img appElementSrc="order.jpg"></div>
+        <div fxFlex fxLayout="column" fxLayoutAlign="space-around stretch">
+            <div>{{ order.id }}</div>
+            <div>{{ order.rental }}</div>
+            <div>{{ order.room }}</div>
+        </div>
+        <div fxFlex fxLayout="column" fxLayoutAlign="space-around stretch">
+            <div>入住{{ order.inDate | date}}</div>
+            <div>离店{{ order.outDate | date}}</div>
+        </div>
+        <div fxFlex fxLayoutAlign="center center">{{ order.nights }}晚</div>
+        <div fxFlex fxLayoutAlign="center center">{{ order.costs }}</div>
+        <div fxFlex fxLayout="column" fxLayoutAlign="center center">
+            <button mat-raised-button color="accent" *ngIf="order.status==0">去支付</button>
+            <button mat-button *ngIf="order.status==0">取消订单</button>
+            <div *ngIf="order.status==2">已取消</div>
+            <button mat-button *ngIf="order.status==1 || order.status==2">删除订单</button>
+        </div>
+    </div>
+</div>

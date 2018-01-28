@@ -8,6 +8,9 @@ mat-sidenav {
     height: 100%;
     padding: 24px;
 }
+mat-sidenav-content {
+    background: #eeeeee;
+}
 .account {
     mat-icon {
         color: gray;
