@@ -4,7 +4,11 @@
         fxLayout fxLayoutAlign="space-between center"
         *ngFor="let control of controls">
       <div>{{ control.name }}</div>
-      <div>{{ control.value }}</div>
+      <!-- <div [ngSwitch]="control.type">
+        <div *ngSwitchCase="birth">{{ control.value | date }}</div>
+        <div *ngSwitchDefault>{{ control.value }}</div>
+      </div> -->
+      <div>{{ control.type=='birth'? (control.value | date) : control.value }}</div>
       <mat-icon class="edit" (click)="onEdit(control)">{{ control.icon }}</mat-icon>
     </div>
   </div>

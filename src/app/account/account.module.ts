@@ -13,7 +13,9 @@ import {
   MatFormFieldModule,
   MatDialogModule,
   MatInputModule,
-  MatSelectModule
+  MatSelectModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 } from '@angular/material';
 
 import { AccountComponent } from './account.component';
@@ -39,6 +41,8 @@ import { OccupanciesComponent } from './occupancies/occupancies.component';
     MatFormFieldModule,
     MatDialogModule,
     MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   declarations: [
     AccountComponent,

@@ -57,6 +57,7 @@ export class ProfileDialogComponent {
     { 'value': '女', 'desc': '女'},
     { 'value': '保密', 'desc': '保密'},
   ]
+  maxDate = new Date();
   constructor(private dialogRef: MatDialogRef<ProfileDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
     switch (data.type) {

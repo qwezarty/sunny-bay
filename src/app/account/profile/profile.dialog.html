@@ -3,14 +3,24 @@
     <mat-form-field *ngIf="showInput">
         <input matInput type="text" [(ngModel)]="data.value">
     </mat-form-field>
-    <mat-form-field *ngIf="showBirth">
+    <!-- <mat-form-field *ngIf="showBirth">
         <input matInput type="text" [(ngModel)]="data.value">
         <p>birth</p>
-    </mat-form-field>
+    </mat-form-field> -->
     <mat-form-field *ngIf="showGender">
         <mat-select [compareWith]="compareGender" [(ngModel)]="data.value">
             <mat-option *ngFor="let gender of genderOptions" [value]="gender.value">{{ gender.desc }}</mat-option>
         </mat-select>
+    </mat-form-field>
+    <mat-form-field *ngIf="showBirth">
+        <input readonly
+               matInput
+               [matDatepicker]="datePicker"
+               [max]="maxDate"
+               [(ngModel)]="data.value"
+               placeholder="离开日期"
+               (click)="datePicker.open()">
+        <mat-datepicker touchUi="true" #datePicker></mat-datepicker>
     </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions>
