@@ -1,6 +1,6 @@
-<div class="control-wrapper" fxLayout fxLayoutAlign="center center">
-  <div fxFlex="70" class="mat-elevation-z2">
-    <div class="control-container" 
+<div class="wrapper" fxLayout fxLayoutAlign="center center">
+  <div fxFlex="80" class="mat-elevation-z2">
+    <div class="container" 
         fxLayout fxLayoutAlign="space-between center"
         *ngFor="let control of controls">
       <div>{{ control.name }}</div>
@@ -9,7 +9,7 @@
         <div *ngSwitchDefault>{{ control.value }}</div>
       </div> -->
       <div>{{ control.type=='birth'? (control.value | date) : control.value }}</div>
-      <mat-icon class="edit" (click)="onEdit(control)">{{ control.icon }}</mat-icon>
+      <mat-icon class="icon" (click)="onEdit(control)">{{ control.icon }}</mat-icon>
     </div>
   </div>
 </div>
