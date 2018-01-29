@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { Occupancies } from './occupancies.model';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-occupancies',
@@ -6,10 +8,82 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./occupancies.component.scss']
 })
 export class OccupanciesComponent implements OnInit {
+  occupancies: Occupancies[] = [
+    { name: '马杰克', gender: '男', birth: new Date(1991, 1, 1), phone: '15726816914' },
+    { name: '丁露丝', gender: '女', birth: new Date(1991, 1, 1), phone: '15726816914' },
+  ]
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
+  }
+
+  onEdit(data: Occupancies) {
+    const cookedData = { mode: 'edit', main: data }
+    this.openDialog(cookedData);
+  }
+
+  onDelete(data: Occupancies) {
+    const cookedData = { mode: 'delete', main: data }
+    this.openDialog(cookedData);
+  }
+
+  onCreate() {
+    const cookedData = { mode: 'create', main: {} }
+    this.openDialog(cookedData);
+  }
+
+  openDialog(data: any) {
+    let dialogRef = this.dialog.open(OccupanciesDialogComponent, {
+      data: Object.assign({}, data)
+    })
+    dialogRef.afterClosed().subscribe(result => {
+      this.changeValue(result);
+    })
+  }
+
+  changeValue(data: any) {
+    if (!data || !data.main) {
+      // means user cancle the change
+      return
+    }
+    if (data.mode === 'edit') {
+      this.occupancies.forEach((element, index) => {
+        // todo use guid rather than name
+        if (element.name === data.name) {
+          this.occupancies[index] = data;
+        }
+      });
+    } else if (data.mode === 'create') {
+      this.occupancies[this.occupancies.length] = data.main;
+    } else if (data.mode === 'delete') {
+      const index = this.occupancies.indexOf(data);
+      if (index > -1) {
+        this.occupancies.splice(index, 1)
+      }
+    }
+  }
+
+}
+
+
+@Component({
+  templateUrl: './occupancies.dialog.html'
+})
+export class OccupanciesDialogComponent {
+  genderOptions = [
+    { 'value': '男', 'desc': '男' },
+    { 'value': '女', 'desc': '女' },
+    { 'value': '保密', 'desc': '保密' },
+  ]
+  maxDate = new Date();
+
+  constructor(private dialogRef: MatDialogRef<OccupanciesDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) {
+  }
+
+  compareGender(g1, g2) {
+    return g1 && g2 ? g1 === g2 : false;
   }
 
 }

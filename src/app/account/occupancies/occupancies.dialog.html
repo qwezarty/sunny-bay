@@ -1,0 +1,32 @@
+<div *ngIf="data.mode=='delete'">
+    <h2 mat-dialog-title>确认删除</h2>
+</div>
+<div *ngIf="data.mode=='edit' || data.mode=='create'">
+    <h2 mat-dialog-title *ngIf="data.mode=='edit'">更改入住人</h2>
+    <h2 mat-dialog-title *ngIf="data.mode=='create'">新增入住人</h2>
+    <mat-form-field>
+        <input matInput type="text" placeholder="姓名" [(ngModel)]="data.main.name">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-select [compareWith]="compareGender" placeholder="性别" [(ngModel)]="data.main.gender">
+            <mat-option *ngFor="let gender of genderOptions" [value]="gender.value">{{ gender.desc }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <input readonly
+               matInput
+               placeholder="生日"
+               [matDatepicker]="datePicker"
+               [max]="maxDate"
+               [(ngModel)]="data.main.birth"
+               (click)="datePicker.open()">
+        <mat-datepicker touchUi="true" #datePicker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="text" placeholder="手机号" [(ngModel)]="data.main.phone">
+    </mat-form-field>
+</div>
+<mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="data" >确定</button>
+    <button mat-button mat-dialog-close>取消</button>
+</mat-dialog-actions>

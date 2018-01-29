@@ -1,3 +1,27 @@
-<p>
-  occupancies works!
-</p>
+<div class="wrapper" fxLayout fxLayoutAlign="center start">
+  <div class="mat-elevation-z2" fxFlex="80" fxLayout="column" fxLayoutAlign="start stretch">
+    <div class="container">
+      <div fxFlex>入住人姓名</div>
+      <div fxFlex>性别</div>
+      <div fxFlex>出生日期</div>
+      <div fxFlex>手机号</div>
+      <div fxFlex>操作</div>
+    </div>
+    <div class="container" *ngFor="let occupancy of occupancies">
+      <div fxFlex>{{ occupancy.name }}</div>
+      <div fxFlex>{{ occupancy.gender }}</div>
+      <div fxFlex>{{ occupancy.birth | date }}</div>
+      <div fxFlex>{{ occupancy.phone }}</div>
+      <div fxFlex>
+        <mat-icon class="icon" (click)="onEdit(occupancy)">edit</mat-icon>
+        <mat-icon class="icon" (click)="onDelete(occupancy)">delete</mat-icon>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="fab-wrapper">
+    <button mat-fab (click)="onCreate()">
+      <mat-icon>add</mat-icon>
+    </button>
+</div>
