@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatIconRegistry } from '@angular/material';
@@ -11,14 +11,14 @@ import { CoreService } from '../core/core.service';
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.scss']
 })
-export class AccountComponent implements OnInit, AfterViewInit {
+export class AccountComponent implements OnInit {
   sidenav: { 'mode': string, 'opened': string } = { 'mode': 'side', 'opened': 'true' };
 
   constructor(
     private breakpointService: BreakpointObserver, private coreService: CoreService,
     private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer,
     private router: Router, private route: ActivatedRoute,
-    private globals: Globals, 
+    private globals: Globals,
   ) {
     iconRegistry.addSvgIcon(
       'account', sanitizer.bypassSecurityTrustResourceUrl(
@@ -31,10 +31,6 @@ export class AccountComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.observeDevice();
-  }
-
-  ngAfterViewInit() {
-    this.router.navigate(['profile'], { relativeTo: this.route })
   }
 
   observeDevice() {
