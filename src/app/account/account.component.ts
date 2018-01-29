@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatIconRegistry } from '@angular/material';
@@ -13,6 +13,7 @@ import { CoreService } from '../core/core.service';
 })
 export class AccountComponent implements OnInit {
   sidenav: { 'mode': string, 'opened': string } = { 'mode': 'side', 'opened': 'true' };
+  @ViewChild('header') header: TemplateRef<any>
 
   constructor(
     private breakpointService: BreakpointObserver, private coreService: CoreService,
@@ -25,11 +26,12 @@ export class AccountComponent implements OnInit {
         globals.Envs.HTML_IMAGE_SRC + 'ic_account_circle_none_56px.svg'
       )
     );
-    this.coreService.installtHeader();
     this.coreService.removeFooter();
   }
 
   ngOnInit() {
+    console.log(this.header)
+    this.coreService.installtHeader(this.header);
     this.observeDevice();
   }
 

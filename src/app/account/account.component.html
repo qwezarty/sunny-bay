@@ -37,3 +37,22 @@
       <mat-icon>menu</mat-icon>
     </button>
 </div> -->
+
+<ng-template #header>
+  <header item-width="100">
+      <mat-toolbar class="mat-elevation-z4" color="primary">
+          <mat-toolbar-row class="nav" fxLayout fxLayoutAlign="space-between center">
+              <mat-icon class="icon" (click)="sidenavElement.toggle()">menu</mat-icon>
+              <div class="header-desc">账户管理</div>
+              <div fxFlex></div>
+              <!-- <a routerLink="/"><button mat-button>日光海岸</button></a>
+              <a routerLink="/rentals/green-wall"><button mat-button>商家</button></a>
+              <a routerLink="/rentals/green-wall/rooms"><button mat-button>房间</button></a>
+              <a routerLink="/account/profile"><button mat-button>账户</button></a>
+              <div fxFlex></div>
+              <a routerLink="/auth/signup"><button mat-button>注册</button></a>
+              <a routerLink="/auth/signin"><button mat-button>登陆</button></a> -->
+          </mat-toolbar-row>
+      </mat-toolbar>
+  </header>
+</ng-template>

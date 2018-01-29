@@ -15,7 +15,8 @@ import {
   MatInputModule,
   MatSelectModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatToolbarModule
 } from '@angular/material';
 
 import { AccountComponent } from './account.component';
@@ -23,7 +24,7 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ProfileComponent, ProfileDialogComponent } from './profile/profile.component';
 import { OrdersComponent } from './orders/orders.component';
-import { OccupanciesComponent } from './occupancies/occupancies.component';
+import { OccupanciesComponent, OccupanciesDialogComponent } from './occupancies/occupancies.component';
 
 @NgModule({
   imports: [
@@ -43,15 +44,17 @@ import { OccupanciesComponent } from './occupancies/occupancies.component';
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatToolbarModule,
   ],
   declarations: [
     AccountComponent,
     ProfileComponent,
     ProfileDialogComponent,
-    OccupanciesComponent,
     OrdersComponent,
+    OccupanciesComponent,
+    OccupanciesDialogComponent,
   ],
-  entryComponents: [ProfileDialogComponent],
+  entryComponents: [ProfileDialogComponent, OccupanciesDialogComponent],
   providers: [BreakpointObserver, MediaMatcher]
 })
 export class AccountModule { }

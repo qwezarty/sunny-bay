@@ -53,3 +53,34 @@ mat-sidenav-content {
         padding-top: $unit-desktop-space-between-content-areas;
     }
 }
+.icon {
+    cursor: pointer
+}
+
+header {
+    z-index: 2;
+    position: relative;
+    mat-toolbar-row {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    .header-desc {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}
+.nav {
+    a {
+        color: inherit;
+        text-decoration: none;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: $media-mobile-max) {
+    button {
+        padding-left: 0px;
+        padding-right: 0px;
+        min-width: 64px;
+    }
+}
