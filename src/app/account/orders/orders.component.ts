@@ -52,10 +52,12 @@ export class OrdersComponent implements OnInit {
         }
       });
     } else if (data.mode === 'delete') {
-      const index = this.orders.indexOf(data.main);
-      if (index > -1) {
-        this.orders.splice(index, 1)
-      }
+      this.orders.forEach((element, index) => {
+        // todo use guid rather than name
+        if (element.id === data.main.id) {
+          this.orders.splice(index, 1)
+        }
+      });
     }
   }
 }
