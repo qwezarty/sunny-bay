@@ -40,7 +40,6 @@ export class OrdersComponent implements OnInit {
   }
 
   changeValue(data: any) {
-    console.log(data);
     if (!data || !data.main) {
       // means user cancle the change
       return
