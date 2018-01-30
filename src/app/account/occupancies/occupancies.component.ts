@@ -47,7 +47,6 @@ export class OccupanciesComponent implements OnInit {
       // means user cancle the change
       return
     }
-    console.log(data)
     if (data.mode === 'edit') {
       this.occupancies.forEach((element, index) => {
         // todo use guid rather than name
@@ -58,10 +57,12 @@ export class OccupanciesComponent implements OnInit {
     } else if (data.mode === 'create') {
       this.occupancies[this.occupancies.length] = data.main;
     } else if (data.mode === 'delete') {
-      const index = this.occupancies.indexOf(data.main);
-      if (index > -1) {
-        this.occupancies.splice(index, 1)
-      }
+      this.occupancies.forEach((element, index) => {
+        // todo use guid rather than name
+        if (element.name === data.main.name) {
+          this.occupancies.splice(index, 1)
+        }
+      });
     }
   }
 
