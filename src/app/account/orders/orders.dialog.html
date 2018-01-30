@@ -1,0 +1,12 @@
+<div *ngIf="data.mode=='delete'">
+    <h2 mat-dialog-title>确认删除</h2>
+    <div>点击确定将会删除订单号为{{ data.main.id }}的记录</div>
+</div>
+<div *ngIf="data.mode=='cancle'">
+    <h2 mat-dialog-title>确认取消</h2>
+    <div>点击确定将会取消{{ data.main.id }}这笔订单</div>
+</div>
+<mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="data" >确定</button>
+    <button mat-button mat-dialog-close>取消</button>
+</mat-dialog-actions>

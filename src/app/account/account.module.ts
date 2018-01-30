@@ -23,7 +23,7 @@ import { AccountComponent } from './account.component';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ProfileComponent, ProfileDialogComponent } from './profile/profile.component';
-import { OrdersComponent } from './orders/orders.component';
+import { OrdersComponent, OrdersDialogComponent } from './orders/orders.component';
 import { OccupanciesComponent, OccupanciesDialogComponent } from './occupancies/occupancies.component';
 
 @NgModule({
@@ -51,10 +51,11 @@ import { OccupanciesComponent, OccupanciesDialogComponent } from './occupancies/
     ProfileComponent,
     ProfileDialogComponent,
     OrdersComponent,
+    OrdersDialogComponent,
     OccupanciesComponent,
     OccupanciesDialogComponent,
   ],
-  entryComponents: [ProfileDialogComponent, OccupanciesDialogComponent],
+  entryComponents: [ProfileDialogComponent, OccupanciesDialogComponent, OrdersDialogComponent],
   providers: [BreakpointObserver, MediaMatcher]
 })
 export class AccountModule { }
