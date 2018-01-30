@@ -20,19 +20,19 @@ export class OrdersComponent implements OnInit {
   }
 
   onCancle(data: Orders) {
-    const cookedData = { mode: 'cancle', main: data }
+    const cookedData = { mode: 'cancle', main: Object.assign({}, data) }
     this.openDialog(cookedData);
 
   }
 
   onDelete(data: Orders) {
-    const cookedData = { mode: 'delete', main: data }
+    const cookedData = { mode: 'delete', main: Object.assign({}, data) }
     this.openDialog(cookedData);
   }
 
   openDialog(data: any) {
     let dialogRef = this.dialog.open(OrdersDialogComponent, {
-      data: Object.assign({}, data)
+      data: data
     })
     dialogRef.afterClosed().subscribe(result => {
       this.changeValue(result);
@@ -58,8 +58,6 @@ export class OrdersComponent implements OnInit {
       }
     }
   }
-  }
-
 }
 
 
