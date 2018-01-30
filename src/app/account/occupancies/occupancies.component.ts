@@ -19,12 +19,12 @@ export class OccupanciesComponent implements OnInit {
   }
 
   onEdit(data: Occupancies) {
-    const cookedData = { mode: 'edit', main: data }
+    const cookedData = { mode: 'edit', main: Object.assign({}, data) }
     this.openDialog(cookedData);
   }
 
   onDelete(data: Occupancies) {
-    const cookedData = { mode: 'delete', main: data }
+    const cookedData = { mode: 'delete', main: Object.assign({}, data) }
     this.openDialog(cookedData);
   }
 
@@ -35,7 +35,7 @@ export class OccupanciesComponent implements OnInit {
 
   openDialog(data: any) {
     let dialogRef = this.dialog.open(OccupanciesDialogComponent, {
-      data: Object.assign({}, data)
+      data: data
     })
     dialogRef.afterClosed().subscribe(result => {
       this.changeValue(result);
@@ -47,17 +47,18 @@ export class OccupanciesComponent implements OnInit {
       // means user cancle the change
       return
     }
+    console.log(data)
     if (data.mode === 'edit') {
       this.occupancies.forEach((element, index) => {
         // todo use guid rather than name
-        if (element.name === data.name) {
-          this.occupancies[index] = data;
+        if (element.name === data.main.name) {
+          this.occupancies[index] = data.main;
         }
       });
     } else if (data.mode === 'create') {
       this.occupancies[this.occupancies.length] = data.main;
     } else if (data.mode === 'delete') {
-      const index = this.occupancies.indexOf(data);
+      const index = this.occupancies.indexOf(data.main);
       if (index > -1) {
         this.occupancies.splice(index, 1)
       }
