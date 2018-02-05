@@ -1,7 +1,16 @@
 @import '~variables.scss';
 
+
+
 section {
     margin: 0;
+    padding: 48px;
+    @media screen and (max-width: $media-mobile-max) {
+        padding: 24px;
+    }
+    @media screen and (max-width: $media-tablet-max) {
+        padding: 36px;
+    }
     dt {
         font-weight: bold;
         line-height: 2em;
@@ -20,12 +29,15 @@ img {
     background: #f1f1f1;
 }
 .view {
-    height: 100vh;
+    height: calc(100vh - 64px);
+}
+.view-xs {
+    height: calc(100vh - 56px);
 }
 .logo {
     background: lightblue;
     padding: 0;
-    height: 36vh;
+    // height: 36vh;
     position: relative;
     .title {
         white-space: nowrap;
@@ -38,13 +50,16 @@ img {
     }
 }
 .general {
-    // margin: 48px;
-    padding: 48px;
-    .general-main {
-        padding: 24px;
-        background: white;
-        border-radius: 2px;
-    }
+    padding: 24px;
+    background: white;
+    border-radius: 2px;
+    margin: 48px;
+}
+.general-xs {
+    margin: 24px;
+}
+.general-md {
+    margin: 36px;
 }
 .rental-show {
     background: coral;

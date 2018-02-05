@@ -1,9 +1,8 @@
 <div class="container">
   <!-- <button mat-raised-button color="primary" (click)="onChangeTheme()">ChangeTheme</button> -->
-  <div class="view" fxLayout="column">
+  <div class="view" ngClass.xs="view-xs" fxLayout="column">
 
-    <section class="logo mat-elevation-z2" fxFlex
-            fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+    <section class="logo mat-elevation-z2" fxFlex="24" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
       <div fxFlex fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
         <img appElementSrc="rental-logo.svg">
         <div fxFlex="3" fxFlex.xs="10"></div>
@@ -11,44 +10,41 @@
       </div>
     </section>
 
-    <section class="general">
-      <div class="general-main mat-elevation-z2" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center">
-        <div fxFlex>
-          <h1>遗失的美好境地</h1>
-          <p>大乐之野由马科团队设计，其拥有超过5年的民宿经营经验，打造更舒适的民宿。</p>
-          <button mat-raised-button color="accent" routerLink="rooms">现在预定</button>
-        </div>
-        <div fxFlex="8"></div>
-        <div class="swiper-container" fxFlex="64">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img appElementSrc="detail-slider-1.jpg" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img appElementSrc="detail-slider-2.jpg" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img appElementSrc="detail-slider-3.jpg" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img appElementSrc="detail-slider-4.jpg" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img appElementSrc="detail-slider-5.jpg" alt="">
-            </div>
-            <div class="swiper-slide">
-              <img appElementSrc="detail-slider-6.jpg" alt="">
-            </div>
+    <section class="general mat-elevation-z2" ngClass.xs="general-xs" ngClass.lt-md="general-md" fxFlex="76" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center" fxLayoutAlign.lt-md="center stretch">
+      <div fxFlex fxFlexOrder.lt-md="3">
+        <h1>遗失的美好境地</h1>
+        <p>大乐之野由马科团队设计，其拥有超过5年的民宿经营经验，打造更舒适的民宿。</p>
+        <button mat-raised-button color="accent" routerLink="rooms">现在预定</button>
+      </div>
+      <div fxFlex="4" fxFlexOrder.lt-md="2"></div>
+      <div class="swiper-container" fxFlex="64" fxFlexOrder.lt-md="1">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img appElementSrc="detail-slider-1.jpg" alt="">
           </div>
-          <div class="swiper-pagination"></div>
+          <div class="swiper-slide">
+            <img appElementSrc="detail-slider-2.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img appElementSrc="detail-slider-3.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img appElementSrc="detail-slider-4.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img appElementSrc="detail-slider-5.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img appElementSrc="detail-slider-6.jpg" alt="">
+          </div>
         </div>
+        <div class="swiper-pagination"></div>
       </div>
     </section>
 
   </div>
 
-  <section class="rental-show"
-           fxFlexOrder="3">
+  <section class="rental-show" fxFlexOrder="3">
     <dl>
       <dt>Show Room</dt>
       <dd>
@@ -57,8 +53,7 @@
       </dd>
     </dl>
   </section>
-  <section class="rental-around"
-           fxFlexOrder="4">
+  <section class="rental-around" fxFlexOrder="4">
     <dl>
       <dt>Discovery</dt>
       <dd>
