@@ -13,7 +13,7 @@ export class RentalsComponent implements OnInit, AfterViewInit {
     private themePicker: ThemeService,
     private coreService: CoreService,
   ) {
-    this.coreService.installAll();
+    this.coreService.removeAll();
   }
 
   ngOnInit() {

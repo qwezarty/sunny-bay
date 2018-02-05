@@ -1,55 +1,52 @@
-<div class="rental-container" fxLayout="column" fxLayoutAlign="space-around">
+<div class="container">
   <!-- <button mat-raised-button color="primary" (click)="onChangeTheme()">ChangeTheme</button> -->
-  <section class="rental-logo" 
-           fxFlexOrder="1"
-           fxLayout="row"
-           fxLayout.xs="column"
-           fxLayoutAlign="center center">
-    <div fxFlex="100"
-         fxLayout="row"
-         fxLayout.xs="column"
-         fxLayoutAlign="center center">
-      <img appElementSrc="rental-logo.svg">
-      <div fxFlex="3" fxFlex.xs="10"></div>
-      <div class="title" ngClass="mat-display-1" ngClass.xs="mat-h1">大乐之野 绿山墙</div>
-    </div>
-    <button mat-fab><mat-icon>menu</mat-icon></button>
-  </section>
-  <section class="rental-general"
-           fxFlexOrder="2"
-           fxLayout="row"
-           fxLayout.xs="column"
-           fxLayoutAlign="space-between center">
-    <div fxFlex>
-      <h1>遗失的美好境地</h1>
-      <p>大乐之野由马科团队设计，其拥有超过5年的民宿经营经验，打造更舒适的民宿。</p>
-      <button mat-raised-button color="accent" routerLink="rooms">现在预定</button>
-    </div>
-    <div fxFlex="10"></div>
-    <div class="swiper-container" fxFlex="60">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img appElementSrc="detail-slider-1.jpg" alt="">
+  <div class="view" fxLayout="column">
+
+    <section class="logo mat-elevation-z2" fxFlex
+            fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+      <div fxFlex fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center">
+        <img appElementSrc="rental-logo.svg">
+        <div fxFlex="3" fxFlex.xs="10"></div>
+        <div class="title" ngClass="mat-display-1" ngClass.xs="mat-h1">大乐之野 · 绿山墙</div>
+      </div>
+    </section>
+
+    <section class="general">
+      <div class="general-main mat-elevation-z2" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center">
+        <div fxFlex>
+          <h1>遗失的美好境地</h1>
+          <p>大乐之野由马科团队设计，其拥有超过5年的民宿经营经验，打造更舒适的民宿。</p>
+          <button mat-raised-button color="accent" routerLink="rooms">现在预定</button>
         </div>
-        <div class="swiper-slide">
-          <img appElementSrc="detail-slider-2.jpg" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img appElementSrc="detail-slider-3.jpg" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img appElementSrc="detail-slider-4.jpg" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img appElementSrc="detail-slider-5.jpg" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img appElementSrc="detail-slider-6.jpg" alt="">
+        <div fxFlex="8"></div>
+        <div class="swiper-container" fxFlex="64">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img appElementSrc="detail-slider-1.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img appElementSrc="detail-slider-2.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img appElementSrc="detail-slider-3.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img appElementSrc="detail-slider-4.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img appElementSrc="detail-slider-5.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img appElementSrc="detail-slider-6.jpg" alt="">
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
+    </section>
+
+  </div>
+
   <section class="rental-show"
            fxFlexOrder="3">
     <dl>
