@@ -20,28 +20,30 @@ export class RentalsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    const swiper = new Swiper('.swiper-container', {
+    const generalSwiper = new Swiper('.general-swiper', {
       lazy: {
         loadPrevNext: true
       },
       grabCursor: true,
       pagination: {
-        el: '.swiper-pagination',
+        el: '.general-pagination',
         dynamicBullets: true
       }
     });
-  }
-
-  onSectionDown() {
-    window.scrollBy({
-      behavior: 'smooth',
-      top: window.innerHeight,
+    const roomsSwiper = new Swiper('.rooms-swiper', {
+      lazy: {
+        loadPrevNext: true
+      },
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      spaceBetween: 30,
+      initialSlide: 1,
+      grabCursor: true,
+      // pagination: {
+      //   el: '.rooms-pagination',
+      //   clickable: true,
+      // }
     });
-    // window.scrollTo({
-    //   behavior: 'smooth',
-    //   top: window.innerHeight,
-    // });
-
   }
 
   onChangeTheme() {

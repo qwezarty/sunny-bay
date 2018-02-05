@@ -1,16 +1,6 @@
 @import '~variables.scss';
 
-
-
 section {
-    margin: 0;
-    padding: 48px;
-    @media screen and (max-width: $media-mobile-max) {
-        padding: 24px;
-    }
-    @media screen and (max-width: $media-tablet-max) {
-        padding: 36px;
-    }
     dt {
         font-weight: bold;
         line-height: 2em;
@@ -25,8 +15,39 @@ img {
     object-fit: cover;
     object-position: center center;
 }
+.rooms-swiper {
+    padding: 4px;
+}
+.rooms-container {
+    width: 100%;
+    height: 100%;
+}
+.rooms-slide {
+    width: 60%;
+    padding: 16px;
+    background: white;
+    border-radius: 2px;
+    p {
+        margin-top: 12px;
+    }
+}
 .container {
-    background: #f1f1f1;
+    background: #fafafa;
+    width: 100%;
+    height: 100%;
+    .content {
+        margin: 24px 48px 24px 48px;
+    }
+}
+.container-md {
+    .content {
+        margin: 16px 36px 16px 36px;
+    }
+}
+.container-xs {
+    .content {
+        margin: 12px 24px 12px 24px;
+    }
 }
 .view {
     height: calc(100vh - 64px);
@@ -36,8 +57,8 @@ img {
 }
 .logo {
     background: lightblue;
+    margin: 0;
     padding: 0;
-    // height: 36vh;
     position: relative;
     .title {
         white-space: nowrap;
@@ -53,17 +74,10 @@ img {
     padding: 24px;
     background: white;
     border-radius: 2px;
-    margin: 48px;
 }
 .general-xs {
     margin: 24px;
 }
 .general-md {
     margin: 36px;
-}
-.rental-show {
-    background: coral;
-}
-.rental-around {
-    background: orchid;
 }
