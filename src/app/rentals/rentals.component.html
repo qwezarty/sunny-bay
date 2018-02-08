@@ -8,8 +8,8 @@
         <div class="title" ngClass="mat-display-1" ngClass.xs="mat-h1">大乐之野 · 绿山墙</div>
       </div>
     </section>
-    <section class="content general mat-elevation-z2" ngClass.xs="general-xs" ngClass.lt-md="general-md" fxFlex="64" fxFlex.lt-md="76" fxLayout="row"
-      fxLayout.lt-md="column" fxLayoutAlign="center center" fxLayoutAlign.lt-md="center stretch">
+    <section class="content general mat-elevation-z2" ngClass.xs="general-xs" ngClass.lt-md="general-md" fxFlex="64" fxFlex.lt-md="76"
+      fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center" fxLayoutAlign.lt-md="center stretch">
       <div fxFlex fxFlexOrder.lt-md="3">
         <h1>遗失的美好境地</h1>
         <p>大乐之野由马科团队设计，其拥有超过5年的民宿经营经验，打造更舒适的民宿。</p>
@@ -65,11 +65,21 @@
 
   </section>
   <section class="content foods">
-    <dl>
-      <dt>Discovery</dt>
-      <dd>
-        Want to find some cool things around? Check here!
-      </dd>
-    </dl>
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <h1>食在绿山墙</h1>
+      <p>有机的美食</p>
+    </div>
+    <div class="foods-main mat-elevation-z2">
+      <mat-grid-list cols="4">
+        <mat-grid-tile  *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows" style.background="black">
+          <div class="foods-background-container" [appBackgroundSrc]="tile.src" fxLayout fxLayoutAlign="start end">
+            <div>
+              <h3>{{ tile.title }}</h3>
+              <p *ngIf="isLargeLayout">{{ tile.desc }}</p>
+            </div>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
   </section>
 </div>

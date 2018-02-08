@@ -81,3 +81,17 @@ img {
 .general-md {
     margin: 36px;
 }
+.foods-main {
+    padding: 16px;
+    .foods-background-container {
+        width: 100%;
+        height: 100%;
+        padding: 16px;
+        color: rgba($color: white, $alpha: 0.87);
+        background-color: hsla(0, 0%, 0%, 0.24);
+        background-blend-mode: overlay;
+        h3 {
+            margin-bottom: 8px;
+        }
+    }
+}
