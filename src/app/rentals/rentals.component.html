@@ -72,8 +72,10 @@
       <div class="swiper-wrapper">
         <div *ngFor="let fun of funs" class="funs-slide swiper-slide" ngClass.xs="funs-slide-xs" ngClass.gt-xs="mat-elevation-z2" fxLayout="column">
           <img [appElementSrc]="fun.src" alt="">
-          <h3>{{ fun.title }}</h3>
-          <p>{{ fun.desc }}</p>
+          <div class="funs-desc">
+            <h3>{{ fun.title }}</h3>
+            <p>{{ fun.desc }}</p>
+          </div>
         </div>
       </div>
       <!-- Add Pagination -->

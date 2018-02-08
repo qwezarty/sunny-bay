@@ -66,7 +66,7 @@ export class RentalsComponent implements OnInit, AfterViewInit {
       },
       slidesPerView: 'auto',
       centeredSlides: true,
-      spaceBetween: 30,
+      spaceBetween: 24,
       initialSlide: 1,
       grabCursor: true,
     });
@@ -76,7 +76,7 @@ export class RentalsComponent implements OnInit, AfterViewInit {
       },
       slidesPerView: 'auto',
       centeredSlides: true,
-      spaceBetween: 24,
+      spaceBetween: 12,
       initialSlide: 1,
       grabCursor: false,
       pagination: {
