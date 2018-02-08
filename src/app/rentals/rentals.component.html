@@ -10,28 +10,16 @@
     </section>
     <section class="content general mat-elevation-z2" ngClass.xs="general-xs" ngClass.lt-md="general-md" fxFlex="64" fxFlex.lt-md="76"
       fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center" fxLayoutAlign.lt-md="center stretch">
-      <div fxFlex fxFlexOrder.lt-md="3">
+      <div class="general-desc" fxFlexOrder.lt-md="3">
         <h1>遗失的美好境地</h1>
         <p>大乐之野由马科团队设计，其拥有超过5年的民宿经营经验，打造更舒适的民宿。</p>
         <button mat-raised-button color="accent" routerLink="rooms">现在预定</button>
       </div>
       <div fxFlex="4" fxFlexOrder.lt-md="2"></div>
-      <div class="general-swiper swiper-container" fxFlex="60" fxFlexOrder.lt-md="1">
+      <div class="general-swiper swiper-container" fxFlex fxFlexOrder.lt-md="1">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img appElementSrc="rental-outlook-1.jpg" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img appElementSrc="rental-outlook-2.jpg" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img appElementSrc="rental-outlook-3.jpg" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img appElementSrc="rental-outlook-4.jpg" alt="">
-          </div>
-          <div class="swiper-slide">
-            <img appElementSrc="rental-outlook-5.jpg" alt="">
+          <div *ngFor="let outlook of outlooks" class="swiper-slide">
+            <img [appElementSrc]="outlook.src" alt="">
           </div>
         </div>
         <div class="general-pagination swiper-pagination"></div>
@@ -46,24 +34,16 @@
     </div>
     <div class="rooms-swiper swiper-container">
       <div class="swiper-wrapper">
-        <div class="rooms-slide swiper-slide mat-elevation-z2" fxLayout="column">
-          <img appElementSrc="rental-room-1.jpg" alt="">
-          <p>面对着山景，清晨美丽尽收眼底</p>
-        </div>
-        <div class="rooms-slide swiper-slide mat-elevation-z2" fxLayout="column">
-          <img appElementSrc="rental-room-2.jpg" alt="">
-          <p>全景落地窗将阳光照进整个客厅</p>
-        </div>
-        <div class="rooms-slide swiper-slide mat-elevation-z2" fxLayout="column">
-          <img appElementSrc="rental-room-3.jpg" alt="">
-          <p>浴室里都是主人精心挑选的欧舒丹洗漱用品</p>
+        <div *ngFor="let room of rooms" class="rooms-slide swiper-slide mat-elevation-z2" fxLayout="column">
+          <img [appElementSrc]="room.src" alt="">
+          <p>{{ room.desc }}</p>
         </div>
       </div>
       <!-- Add Pagination -->
       <!-- <div class="rooms-pagination swiper-pagination"></div> -->
     </div>
-
   </section>
+
   <section class="content foods">
     <div fxLayout="column" fxLayoutAlign="center center">
       <h1>食在绿山墙</h1>
@@ -71,15 +51,34 @@
     </div>
     <div class="foods-main mat-elevation-z2">
       <mat-grid-list cols="4">
-        <mat-grid-tile  *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows" style.background="black">
-          <div class="foods-background-container" [appBackgroundSrc]="tile.src" fxLayout fxLayoutAlign="start end">
+        <mat-grid-tile *ngFor="let food of foods" [colspan]="food.cols" [rowspan]="food.rows">
+          <div class="foods-background-container" [appBackgroundSrc]="food.src" fxLayout fxLayoutAlign="start end">
             <div>
-              <h3>{{ tile.title }}</h3>
-              <p *ngIf="isLargeLayout">{{ tile.desc }}</p>
+              <h3>{{ food.title }}</h3>
+              <p *ngIf="isLargeLayout">{{ food.desc }}</p>
             </div>
           </div>
         </mat-grid-tile>
       </mat-grid-list>
     </div>
+  </section>
+
+  <section class="content funs">
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <h1>玩在绿山墙</h1>
+      <p>山里的放松休闲</p>
+    </div>
+    <div class="funs-swiper swiper-container" ngClass.xs="funs-swiper-xs mat-elevation-z2">
+      <div class="swiper-wrapper">
+        <div *ngFor="let fun of funs" class="funs-slide swiper-slide" ngClass.xs="funs-slide-xs" ngClass.gt-xs="mat-elevation-z2" fxLayout="column">
+          <img [appElementSrc]="fun.src" alt="">
+          <h3>{{ fun.title }}</h3>
+          <p>{{ fun.desc }}</p>
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="funs-pagination swiper-pagination" ngClass.xs="funs-pagination-xs"></div>
+    </div>
+
   </section>
 </div>
