@@ -35,6 +35,7 @@ export class RentalsComponent implements OnInit, AfterViewInit {
     { title: '交友晚会', src: 'rental-fun-3.jpg', desc: '在绿山墙，来自世界各地的朋友聚集在星空的草地上，一起喝酒，一起唱歌。' },
   ]
   isLargeLayout = false;
+  roomsSwiper: any;
   funsSwiper: any;
 
   constructor(
@@ -60,7 +61,7 @@ export class RentalsComponent implements OnInit, AfterViewInit {
         dynamicBullets: true
       }
     });
-    const roomsSwiper = new Swiper('.rooms-swiper', {
+    this.roomsSwiper = new Swiper('.rooms-swiper', {
       lazy: {
         loadPrevNext: true
       },
@@ -69,6 +70,10 @@ export class RentalsComponent implements OnInit, AfterViewInit {
       spaceBetween: 24,
       initialSlide: 1,
       grabCursor: true,
+      pagination: {
+        el: '.rooms-pagination',
+        clickable: true,
+      }
     });
     this.funsSwiper = new Swiper('.funs-swiper', {
       lazy: {
@@ -108,6 +113,9 @@ export class RentalsComponent implements OnInit, AfterViewInit {
       this.funsSwiper.allowTouchMove = true;
       this.funsSwiper.activeIndex = 1;
     }
+    if (this.roomsSwiper) {
+      this.roomsSwiper.activeIndex = 1;
+    }
     this.foods.forEach((element, index) => {
       this.foods[index].cols = 2;
     });
@@ -119,6 +127,9 @@ export class RentalsComponent implements OnInit, AfterViewInit {
       this.funsSwiper.unsetGrabCursor();
       this.funsSwiper.allowTouchMove = false;
       this.funsSwiper.activeIndex = 1;
+    }
+    if (this.roomsSwiper) {
+      this.roomsSwiper.activeIndex = 1;
     }
     this.foods.forEach((element, index) => {
       this.foods[index].cols = 2;

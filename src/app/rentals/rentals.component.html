@@ -12,7 +12,7 @@
       fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center" fxLayoutAlign.lt-md="center stretch">
       <div class="general-desc" fxFlexOrder.lt-md="3">
         <h1>遗失的美好境地</h1>
-        <p>大乐之野由马科团队设计，其拥有超过5年的民宿经营经验，打造更舒适的民宿。</p>
+        <p>大乐之野引自山海经， 意为传说中遗失的美好境地。当现代社会的快节奏生活缠身，我们更需要这样一个放空身心的美好境地。</p>
         <button mat-raised-button color="accent" routerLink="rooms">现在预定</button>
       </div>
       <div fxFlex="4" fxFlexOrder.lt-md="2"></div>
@@ -34,13 +34,13 @@
     </div>
     <div class="rooms-swiper swiper-container">
       <div class="swiper-wrapper">
-        <div *ngFor="let room of rooms" class="rooms-slide swiper-slide mat-elevation-z2" fxLayout="column">
+        <div *ngFor="let room of rooms" class="rooms-slide swiper-slide mat-elevation-z2" ngClass.xs="rooms-slide-xs" fxLayout="column">
           <img [appElementSrc]="room.src" alt="">
           <p>{{ room.desc }}</p>
         </div>
       </div>
-      <!-- Add Pagination -->
-      <!-- <div class="rooms-pagination swiper-pagination"></div> -->
+        <!-- Add Pagination -->
+        <div class="rooms-pagination swiper-pagination" ngClass.xs="rooms-pagination-xs"></div>
     </div>
   </section>
 
@@ -70,7 +70,8 @@
     </div>
     <div class="funs-swiper swiper-container" ngClass.xs="funs-swiper-xs mat-elevation-z2">
       <div class="swiper-wrapper">
-        <div *ngFor="let fun of funs" class="funs-slide swiper-slide" ngClass.xs="funs-slide-xs" ngClass.gt-xs="mat-elevation-z2" fxLayout="column">
+        <div *ngFor="let fun of funs" class="funs-slide swiper-slide" ngClass.xs="funs-slide-xs" ngClass.gt-xs="mat-elevation-z2"
+          fxLayout="column">
           <img [appElementSrc]="fun.src" alt="">
           <div class="funs-desc">
             <h3>{{ fun.title }}</h3>

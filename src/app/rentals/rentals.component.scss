@@ -31,6 +31,15 @@ img {
         margin-top: 12px;
     }
 }
+.rooms-slide-xs {
+    width: 100%;
+}
+.rooms-pagination {
+    visibility: hidden;
+}
+.rooms-pagination-xs {
+    visibility: visible;
+}
 .container {
     background: #fafafa;
     width: 100%;
